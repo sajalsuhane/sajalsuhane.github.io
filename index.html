@@ -695,7 +695,11 @@
             }
 
             .header-text h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .header-text p {
+                font-size: 1rem;
             }
 
             .nav-links {
@@ -709,6 +713,7 @@
             .timeline-content {
                 width: 100%;
                 margin-left: 0;
+                padding: 1.5rem;
             }
 
             .timeline-content.right {
@@ -721,6 +726,37 @@
 
             .timeline-item::before {
                 left: 10px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 0.5rem;
             }
         }
 
@@ -824,7 +860,7 @@
                 <div class="header-text">
                     <h1>Sajal Suhane</h1>
                     <p class="tagline">Senior Software Engineer | Distributed Systems Architect | Cloud Specialist</p>
-                    <p>Building scalable distributed systems and cloud-native solutions that power modern fintech and enterprise applications.</p>
+                    <p>Building scalable distributed systems for fintech and enterprise applications.</p>
                     <div class="stats-container" style="margin-top: 1.5rem; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
                         <div class="stat-item">
                             <div class="stat-value" style="font-size: 1.5rem; font-weight: 700; color: var(--white);">5+</div>
