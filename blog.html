@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Insights | Sajal Suhane</title>
+    <meta name="description" content="Technical articles and insights on distributed systems, cloud architecture, and software engineering by Sajal Suhane">
+    <meta name="keywords" content="distributed systems, cloud computing, technical blog, software engineering, fintech, scalable systems">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-excerpt {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Sidebar */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 3rem;
+        }
+
+        .sidebar {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .categories-list {
+            list-style: none;
+        }
+
+        .categories-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .categories-list li::before {
+            content: '▸';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        .categories-list a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .categories-list a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copyright {
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Sajal Suhane</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html" class="active">Insights</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="cv.html">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Technical Insights & Articles</h1>
+                <p>Exploring the frontiers of distributed systems, cloud architecture, and software engineering</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="blog-container">
+                <div class="blog-main">
+                    <h2 class="section-title">Latest Articles</h2>
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <div class="blog-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-robot" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <div class="blog-content">
+                                <h3>Real-time Predictive Analytics for Industrial Robots</h3>
+                                <p class="blog-meta">Published in International Journal of Engineering and Advanced Technology • June 2020</p>
+                                <p class="blog-excerpt">This research paper presents a distributed predictive maintenance system for industrial automation, leveraging machine learning algorithms to anticipate equipment failures and optimize maintenance schedules.</p>
+                                <a href="https://www.ijeat.org/wp-content/uploads/papers/v9i3/C5342029320.pdf" class="read-more" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Read Paper
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-cloud" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <div class="blog-content">
+                                <h3>Cloud Migration Strategies for Financial Institutions</h3>
+                                <p class="blog-meta">Technical Article • August 2023</p>
+                                <p class="blog-excerpt">Best practices and lessons learned from migrating complex financial workflows from on-premises infrastructure to distributed cloud environments, with a focus on security and compliance.</p>
+                                <a href="#" class="read-more">
+                                    <i class="fas fa-book"></i> Read Article
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-microchip" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <div class="blog-content">
+                                <h3>Distributed Systems Design Patterns</h3>
+                                <p class="blog-meta">Technical Guide • September 2023</p>
+                                <p class="blog-excerpt">A comprehensive guide to architectural patterns for building scalable, fault-tolerant distributed systems, including leader election, consensus algorithms, and distributed caching strategies.</p>
+                                <a href="#" class="read-more">
+                                    <i class="fas fa-book"></i> Read Guide
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-img" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chart-line" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <div class="blog-content">
+                                <h3>Performance Optimization in High-Frequency Trading Systems</h3>
+                                <p class="blog-meta">Technical Article • November 2023</p>
+                                <p class="blog-excerpt">Techniques for optimizing distributed systems performance in high-frequency trading applications, including latency reduction, distributed caching, and real-time data processing.</p>
+                                <a href="#" class="read-more">
+                                    <i class="fas fa-book"></i> Read Article
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-shield-alt" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <div class="blog-content">
+                                <h3>Security Considerations in Distributed Financial Systems</h3>
+                                <p class="blog-meta">Technical Article • December 2023</p>
+                                <p class="blog-excerpt">Security best practices for distributed financial systems, including encryption, access control, audit logging, and compliance with financial regulations.</p>
+                                <a href="#" class="read-more">
+                                    <i class="fas fa-book"></i> Read Article
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-img" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-cogs" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <div class="blog-content">
+                                <h3>Building Scalable Microservices Architectures</h3>
+                                <p class="blog-meta">Technical Guide • January 2024</p>
+                                <p class="blog-excerpt">A practical guide to designing and implementing scalable microservices architectures using modern cloud technologies and container orchestration platforms.</p>
+                                <a href="#" class="read-more">
+                                    <i class="fas fa-book"></i> Read Guide
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <h3>Categories</h3>
+                    <ul class="categories-list">
+                        <li><a href="#">Distributed Systems</a></li>
+                        <li><a href="#">Cloud Architecture</a></li>
+                        <li><a href="#">Financial Technology</a></li>
+                        <li><a href="#">Performance Optimization</a></li>
+                        <li><a href="#">Security & Compliance</a></li>
+                        <li><a href="#">Machine Learning</a></li>
+                        <li><a href="#">Software Engineering</a></li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem;">Recent Posts</h3>
+                    <div class="recent-posts">
+                        <div class="recent-post" style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e7eb;">
+                            <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 500;">Building Scalable Microservices Architectures</a>
+                            <p style="color: var(--gray); font-size: 0.9rem; margin-top: 0.3rem;">January 2024</p>
+                        </div>
+                        <div class="recent-post" style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e7eb;">
+                            <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 500;">Security Considerations in Distributed Financial Systems</a>
+                            <p style="color: var(--gray); font-size: 0.9rem; margin-top: 0.3rem;">December 2023</p>
+                        </div>
+                        <div class="recent-post" style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e7eb;">
+                            <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 500;">Performance Optimization in High-Frequency Trading Systems</a>
+                            <p style="color: var(--gray); font-size: 0.9rem; margin-top: 0.3rem;">November 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 Sajal Suhane. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="cv.html">Resume</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Back to top functionality
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

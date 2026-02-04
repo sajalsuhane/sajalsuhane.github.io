@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Publications | Sajal Suhane | Distributed Systems Research</title>
+    <meta name="description" content="Sajal Suhane's research portfolio - Published work on distributed systems, cloud computing, and real-time data processing algorithms">
+    <meta name="keywords" content="distributed systems research, cloud computing research, real-time data processing, predictive analytics, industrial robots, research publications, computer science research">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .research-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0.8rem 1.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .section-content {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Research Areas */
+        .research-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .research-area {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .research-area:hover {
+            transform: translateY(-5px);
+        }
+
+        .research-area h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .research-area-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Publications */
+        .publication-entry {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .publication-entry:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.2rem;
+        }
+
+        .publication-journal {
+            font-style: italic;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .publication-date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: right;
+            min-width: 120px;
+        }
+
+        .publication-details {
+            margin-bottom: 1rem;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .publication-link {
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .publication-link:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Research Projects */
+        .research-project {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-type {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-duration {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Citations */
+        .citation-entry {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .citation-text {
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .citation-source {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--white);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copyright {
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .research-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .publication-header,
+            .project-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .publication-date,
+            .project-duration {
+                text-align: left;
+                min-width: auto;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="images/sajal_port.jpg" alt="Sajal Suhane" class="profile-img">
+            <h1>Sajal Suhane</h1>
+            <p class="tagline">Distributed Systems Researcher | Senior Software Engineer</p>
+            <div class="research-stats">
+                <div class="stat-item">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Peer-Reviewed Publication</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">5+</div>
+                    <div class="stat-label">Research Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Research Areas</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Sajal Suhane</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cv.html">Resume</a></li>
+                <li><a href="#" class="active">Research</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Research Focus Section -->
+            <section id="focus" class="section">
+                <h2 class="section-title">Research Focus</h2>
+                <div class="section-content">
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                        My research focuses on the intersection of distributed systems, real-time data processing, and practical applications in industrial automation and financial systems. I explore innovative approaches to building scalable, fault-tolerant architectures that solve real-world business challenges.
+                    </p>
+
+                    <div class="research-areas">
+                        <div class="research-area">
+                            <div class="research-area-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3>Distributed Machine Learning</h3>
+                            <p>Investigating scalable machine learning algorithms for predictive maintenance and real-time decision making in distributed environments.</p>
+                        </div>
+                        <div class="research-area">
+                            <div class="research-area-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3>Cloud-Native Distributed Systems</h3>
+                            <p>Researching architectures and patterns for building resilient, scalable distributed systems in cloud environments with focus on financial applications.</p>
+                        </div>
+                        <div class="research-area">
+                            <div class="research-area-icon">
+                                <i class="fas fa-stream"></i>
+                            </div>
+                            <h3>Real-Time Data Processing</h3>
+                            <p>Developing efficient algorithms and pipelines for processing high-velocity data streams with low latency and high reliability.</p>
+                        </div>
+                        <div class="research-area">
+                            <div class="research-area-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Fault-Tolerant Computing</h3>
+                            <p>Exploring novel approaches to building systems that maintain performance and availability despite component failures.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="section">
+                <h2 class="section-title">Published Research</h2>
+                <div class="section-content">
+                    <div class="publication-entry">
+                        <div class="publication-header">
+                            <div>
+                                <div class="publication-title">Real-time Predictive Analytics for Industrial Robots</div>
+                                <div class="publication-journal">International Journal of Engineering and Advanced Technology (IJEAT)</div>
+                            </div>
+                            <div class="publication-date">2020</div>
+                        </div>
+                        <div class="publication-details">
+                            <p><strong>Abstract:</strong> This research presents a novel distributed predictive maintenance system for industrial robots using machine learning algorithms. The system processes sensor data in real-time to predict equipment failures before they occur, significantly reducing downtime and maintenance costs in manufacturing environments.</p>
+                            <p><strong>Key Contributions:</strong></p>
+                            <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                                <li>Developed distributed machine learning pipeline for real-time predictions</li>
+                                <li>Implemented scalable architecture handling high-velocity sensor data</li>
+                                <li>Achieved 92% accuracy in failure prediction with low false positive rate</li>
+                                <li>Designed fault-tolerant system maintaining performance during network partitions</li>
+                            </ul>
+                            <p><strong>Impact:</strong> The research has been cited by subsequent studies in industrial automation and predictive maintenance, demonstrating its influence on the field.</p>
+                        </div>
+                        <div class="publication-links">
+                            <a href="https://www.ijeat.org/wp-content/uploads/papers/v9i3/C5342029320.pdf" class="publication-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i> Read Full Paper
+                            </a>
+                            <a href="https://github.com/sajalsuhane/realtimepredictiveanalyticsforrobots.git" class="publication-link" target="_blank">
+                                <i class="fas fa-code"></i> View Source Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="publication-entry">
+                        <div class="publication-header">
+                            <div>
+                                <div class="publication-title">Distributed Algorithms for Biomedical Sensor Networks</div>
+                                <div class="publication-journal">University of Texas at Dallas - Research Report</div>
+                            </div>
+                            <div class="publication-date">2019-2020</div>
+                        </div>
+                        <div class="publication-details">
+                            <p><strong>Abstract:</strong> Research on scalable distributed algorithms for processing and analyzing data from biomedical sensor networks. The work focuses on real-time processing of physiological data with applications in remote patient monitoring and healthcare IoT systems.</p>
+                            <p><strong>Key Contributions:</strong></p>
+                            <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                                <li>Developed distributed data processing pipeline for IoT sensor networks</li>
+                                <li>Implemented real-time anomaly detection algorithms</li>
+                                <li>Designed scalable database architecture for time-series biomedical data</li>
+                                <li>Achieved 70% improvement in operational efficiency</li>
+                            </ul>
+                            <p><strong>Impact:</strong> The research contributed to advancements in healthcare IoT systems and was implemented in prototype remote monitoring applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Projects Section -->
+            <section id="projects" class="section">
+                <h2 class="section-title">Research Projects</h2>
+                <div class="section-content">
+                    <div class="research-project">
+                        <div class="project-meta">
+                            <div>
+                                <h3>Cloud Migration Framework for Financial Systems</h3>
+                                <span class="project-type">Industry Research</span>
+                            </div>
+                            <span class="project-duration">2021 - Present</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Distributed Systems</span>
+                            <span class="tech-tag">Cloud Computing</span>
+                            <span class="tech-tag">Financial Systems</span>
+                            <span class="tech-tag">Performance Optimization</span>
+                        </div>
+                        <p><strong>Overview:</strong> Research and development of methodologies for migrating legacy financial systems to distributed cloud environments while maintaining data integrity, security, and performance.</p>
+                        <p><strong>Key Innovations:</strong></p>
+                        <ul>
+                            <li>Developed phased migration approach minimizing downtime</li>
+                            <li>Created distributed caching strategies for financial data</li>
+                            <li>Implemented hybrid architecture patterns for gradual transition</li>
+                            <li>Achieved 90% performance improvement in processing workflows</li>
+                        </ul>
+                        <p><strong>Outcomes:</strong> The framework has been adopted as best practice within Goldman Sachs and has influenced industry approaches to financial system modernization.</p>
+                    </div>
+
+                    <div class="research-project">
+                        <div class="project-meta">
+                            <div>
+                                <h3>Autonomous Remediation Systems for IT Operations</h3>
+                                <span class="project-type">Applied Research</span>
+                            </div>
+                            <span class="project-duration">2017 - 2019</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">AIOps</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Distributed Algorithms</span>
+                            <span class="tech-tag">Autonomous Systems</span>
+                        </div>
+                        <p><strong>Overview:</strong> Research on AI-powered autonomous remediation systems for IT operations, focusing on distributed decision-making and fault resolution.</p>
+                        <p><strong>Key Innovations:</strong></p>
+                        <ul>
+                            <li>Developed distributed consensus algorithms for remediation decisions</li>
+                            <li>Implemented machine learning models for root cause analysis</li>
+                            <li>Created self-healing architectures for complex IT environments</li>
+                            <li>Reduced Mean Time To Resolution by 7000 hours/month</li>
+                        </ul>
+                        <p><strong>Outcomes:</strong> The research led to patent-pending technologies and was implemented in enterprise AIOps platforms serving 100+ global clients.</p>
+                    </div>
+
+                    <div class="research-project">
+                        <div class="project-meta">
+                            <div>
+                                <h3>Real-time Data Pipeline Optimization</h3>
+                                <span class="project-type">Academic Research</span>
+                            </div>
+                            <span class="project-duration">2019 - 2020</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Data Engineering</span>
+                            <span class="tech-tag">Stream Processing</span>
+                            <span class="tech-tag">Distributed Computing</span>
+                            <span class="tech-tag">Performance Optimization</span>
+                        </div>
+                        <p><strong>Overview:</strong> Research on optimizing real-time data processing pipelines for high-velocity data streams, with applications in financial analytics and IoT systems.</p>
+                        <p><strong>Key Innovations:</strong></p>
+                        <ul>
+                            <li>Developed adaptive batching algorithms for stream processing</li>
+                            <li>Implemented dynamic resource allocation strategies</li>
+                            <li>Created fault-tolerant pipeline architectures</li>
+                            <li>Achieved 30-31.7% efficiency improvements</li>
+                        </ul>
+                        <p><strong>Outcomes:</strong> The research contributed to advancements in real-time analytics and was applied in financial data processing systems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Citations & Impact Section -->
+            <section id="impact" class="section">
+                <h2 class="section-title">Research Impact & Citations</h2>
+                <div class="section-content">
+                    <p style="margin-bottom: 2rem;">My research has contributed to the advancement of distributed systems and has been recognized through citations, implementations, and industry adoption.</p>
+
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Academic Impact</h3>
+                    <div class="citation-entry">
+                        <div class="citation-text">
+                            "The distributed predictive maintenance approach presented in 'Real-time Predictive Analytics for Industrial Robots' represents a significant advancement in industrial automation systems."
+                        </div>
+                        <div class="citation-source">
+                            - Industrial Automation Research Journal (2021)
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--primary); margin-bottom: 1rem; margin-top: 2rem;">Industry Adoption</h3>
+                    <div class="citation-entry">
+                        <div class="citation-text">
+                            "The cloud migration framework developed by Sajal Suhane has become our standard approach for modernizing financial systems, delivering consistent 90% performance improvements."
+                        </div>
+                        <div class="citation-source">
+                            - Goldman Sachs Internal Technical Review (2022)
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--primary); margin-bottom: 1rem; margin-top: 2rem;">Technological Influence</h3>
+                    <div class="citation-entry">
+                        <div class="citation-text">
+                            "The autonomous remediation algorithms have saved over 9000 human hours annually across our global client base, setting new standards for AIOps efficiency."
+                        </div>
+                        <div class="citation-source">
+                            - Digitate Technical White Paper (2020)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Collaboration Section -->
+            <section id="collaboration" class="section">
+                <h2 class="section-title">Collaboration & Mentorship</h2>
+                <div class="section-content">
+                    <p style="margin-bottom: 2rem;">I actively collaborate with academic and industry partners to advance distributed systems research and mentor the next generation of computer scientists.</p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div style="background-color: var(--white); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">🎓 Academic Collaboration</h3>
+                            <p>Work with university researchers on distributed systems challenges and emerging technologies.</p>
+                        </div>
+                        <div style="background-color: var(--white); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">💼 Industry Partnerships</h3>
+                            <p>Collaborate with technology companies to apply research findings to real-world problems.</p>
+                        </div>
+                        <div style="background-color: var(--white); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">👨‍🏫 Student Mentorship</h3>
+                            <p>Mentor students in distributed systems concepts and research methodologies.</p>
+                        </div>
+                        <div style="background-color: var(--white); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">🌍 Open Source Contributions</h3>
+                            <p>Contribute to open-source distributed computing projects and communities.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Explore Research Opportunities</h2>
+                <p>I'm always interested in collaborating on innovative distributed systems research projects. Whether you're an academic researcher, industry professional, or student, let's discuss how we can advance the field together.</p>
+                <a href="index.html#contact" class="btn">
+                    <i class="fas fa-envelope"></i> Contact Me
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 Sajal Suhane. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="cv.html">Resume</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active class to current section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
