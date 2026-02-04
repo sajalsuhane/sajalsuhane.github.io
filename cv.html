@@ -1,71 +1,902 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>SAJAL SUHANE - Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajal Suhane | Professional Resume</title>
+    <meta name="description" content="Sajal Suhane's professional resume - Senior Software Engineer & Distributed Systems Architect with expertise in cloud-native solutions and fintech innovation">
+    <meta name="keywords" content="distributed systems, cloud architecture, senior software engineer, resume, CV, fintech, scalable systems, AWS, Java, Python">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --white: #ffffff;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Sajal Suhane<br /></h1>
-						<p>A data science enthusiast trying to bring a positive change in the society.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="cv.html" class="logo">Sajal Suhane</a>
-					</header>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Profile Overview</a></li>
-							<li class="active"><a href="cv.html">Resume</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/sajalsuhane" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://www.github.com/sajalsuhane" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-                    </nav>
-                       
-            <div id="main">
-                    
-                <!-- Embed pdf -->
-                <article>
-                   <embed src="cv.pdf" alt="pdf" height="1000" width="1000" frameborder="0" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
-                </article>
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .resume-container {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .download-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .resume-header h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-header .title {
+            font-size: 1.2rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-content {
+            padding-left: 1rem;
+        }
+
+        .job-entry {
+            margin-bottom: 1.5rem;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .job-company {
+            font-style: italic;
+            color: var(--gray);
+        }
+
+        .job-date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: right;
+            min-width: 120px;
+        }
+
+        .job-description {
+            margin-left: 0;
+        }
+
+        .job-description ul {
+            margin-bottom: 0.5rem;
+        }
+
+        .job-description li {
+            margin-bottom: 0.3rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .job-description li::before {
+            content: '•';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        .education-entry {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-school {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .education-degree {
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        .education-date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: right;
+            min-width: 120px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Projects Section */
+        .project-entry {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Certifications */
+        .certification-entry {
+            margin-bottom: 1rem;
+        }
+
+        .certification-name {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .certification-source {
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copyright {
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: var(--white);
+                color: var(--dark);
+            }
+
+            header, nav, footer, .download-btn {
+                display: none;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                background-color: var(--white);
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .section-title {
+                page-break-after: avoid;
+            }
+
+            .job-entry, .education-entry {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .job-header, .education-header, .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .job-date, .education-date {
+                text-align: left;
+                min-width: auto;
+                margin-top: 0.3rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Sajal Suhane</h1>
+            <p class="tagline">Senior Software Engineer | Distributed Systems Architect</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Dallas, Texas</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:ssuhane31@gmail.com">ssuhane31@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Available upon request</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/sajalsuhane" target="_blank">linkedin.com/in/sajalsuhane</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://www.github.com/sajalsuhane" target="_blank">github.com/sajalsuhane</a>
+                </div>
             </div>
+        </div>
+    </header>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Sajal Suhane | 2024</li></ul>
-					</div>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Sajal Suhane</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#" class="active">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
 
-			</div>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="resume-container">
+                <a href="cv.pdf" class="download-btn" download>
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+                <div class="resume-header">
+                    <h1>Sajal Suhane</h1>
+                    <p class="title">Senior Software Engineer | Distributed Systems Architect | Cloud Specialist</p>
+                </div>
 
-	</body>
+                <!-- Professional Summary -->
+                <div class="resume-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-user"></i> Professional Summary
+                    </h2>
+                    <div class="section-content">
+                        <p>Senior Software Engineer and Distributed Systems Architect with 5+ years of experience designing and implementing scalable, high-performance systems for financial institutions and enterprise applications. Proven expertise in cloud-native development, microservices architecture, and real-time data processing with a strong focus on distributed systems innovation.</p>
+                        <p>Specialized in migrating complex legacy systems to modern distributed cloud environments, achieving significant performance improvements (up to 90% reduction in processing time). Adept at building fault-tolerant architectures, optimizing system reliability, and delivering maintainable solutions that drive business value.</p>
+                        <p><strong>Core Strengths:</strong> Distributed Systems Design, Cloud Migration Strategy, Performance Optimization, Fault Tolerance Engineering, Real-time Data Processing, Microservices Architecture</p>
+                    </div>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="resume-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-briefcase"></i> Professional Experience
+                    </h2>
+                    <div class="section-content">
+                        <div class="job-entry">
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Senior Software Engineer</div>
+                                    <div class="job-company">Goldman Sachs - CFOSS Division</div>
+                                </div>
+                                <div class="job-date">2021 - Present</div>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Lead design and development of cloud-native distributed systems for financial workflows</li>
+                                    <li>Architect scalable microservices for real-time financial data processing</li>
+                                    <li>Migrate on-premises workflows to AWS Cloud, achieving 90% reduction in processing time</li>
+                                    <li>Implement distributed caching and event-driven architectures for high-frequency trading</li>
+                                    <li>Optimize system performance and reliability for mission-critical financial applications</li>
+                                    <li>Design fault-tolerant distributed systems with comprehensive error handling</li>
+                                    <li>Collaborate with cross-functional teams to deliver innovative fintech solutions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="job-entry">
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Software Development Intern</div>
+                                    <div class="job-company">Goldman Sachs - Controllers Division</div>
+                                </div>
+                                <div class="job-date">2020 - 2021</div>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Developed operational storage tool handling billions of data points per second</li>
+                                    <li>Created Kibana dashboards reducing data ingestion time by 30%</li>
+                                    <li>Designed proof-of-concept for distributed queuing system (31.7% efficiency gain)</li>
+                                    <li>Implemented distributed tracing for complex financial workflows</li>
+                                    <li>Collaborated on real-time data processing pipelines for financial analytics</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="job-entry">
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Research Assistant</div>
+                                    <div class="job-company">University of Texas at Dallas</div>
+                                </div>
+                                <div class="job-date">2019 - 2020</div>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Developed distributed algorithms for biomedical sensor data processing</li>
+                                    <li>Designed scalable databases for IoT sensor networks</li>
+                                    <li>Implemented real-time data pipelines reducing human effort by 0.6 FTE</li>
+                                    <li>Built cross-platform applications with 70% operational efficiency improvement</li>
+                                    <li>Conducted research on distributed systems for healthcare applications</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="job-entry">
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Systems Engineer</div>
+                                    <div class="job-company">Tata Consultancy Services - Digitate</div>
+                                </div>
+                                <div class="job-date">2017 - 2019</div>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Enhanced ignio AIOps platform with distributed algorithms</li>
+                                    <li>Reduced Mean Time To Resolution (MTTR) by 7000 hours/month across 100+ clients</li>
+                                    <li>Implemented autonomous remediation systems saving 9000+ human hours/year</li>
+                                    <li>Conducted architecture and security reviews for UK/EU-based clients</li>
+                                    <li>Developed AI-based algorithms for IT operations automation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-graduation-cap"></i> Education
+                    </h2>
+                    <div class="section-content">
+                        <div class="education-entry">
+                            <div class="education-header">
+                                <div>
+                                    <div class="education-school">University of Texas at Dallas</div>
+                                    <div class="education-degree">Master of Science in Computer Science</div>
+                                </div>
+                                <div class="education-date">2021 - 2023</div>
+                            </div>
+                            <p>Specialized in distributed systems, cloud computing, and advanced software engineering. Conducted research on scalable architectures for real-time data processing.</p>
+                            <p><strong>Key Courses:</strong> Distributed Systems, Cloud Computing, Advanced Algorithms, Big Data Analytics, Machine Learning</p>
+                        </div>
+
+                        <div class="education-entry">
+                            <div class="education-header">
+                                <div>
+                                    <div class="education-school">Undergraduate Institution</div>
+                                    <div class="education-degree">Bachelor of Engineering in Computer Engineering</div>
+                                </div>
+                                <div class="education-date">2013 - 2017</div>
+                            </div>
+                            <p>Built strong foundation in computer science fundamentals, software development, and system design.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="resume-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-code"></i> Technical Skills
+                    </h2>
+                    <div class="section-content">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3>Distributed Systems</h3>
+                                <div class="skill-list">
+                                    <span class="skill-tag">Microservices</span>
+                                    <span class="skill-tag">Cloud-Native</span>
+                                    <span class="skill-tag">Scalability</span>
+                                    <span class="skill-tag">Fault Tolerance</span>
+                                    <span class="skill-tag">Consensus Algorithms</span>
+                                    <span class="skill-tag">Event-Driven</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Cloud & DevOps</h3>
+                                <div class="skill-list">
+                                    <span class="skill-tag">AWS</span>
+                                    <span class="skill-tag">Kubernetes</span>
+                                    <span class="skill-tag">Docker</span>
+                                    <span class="skill-tag">CI/CD</span>
+                                    <span class="skill-tag">Terraform</span>
+                                    <span class="skill-tag">Monitoring</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Programming</h3>
+                                <div class="skill-list">
+                                    <span class="skill-tag">Java</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">Go</span>
+                                    <span class="skill-tag">SQL</span>
+                                    <span class="skill-tag">Bash</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Frameworks</h3>
+                                <div class="skill-list">
+                                    <span class="skill-tag">Spring Boot</span>
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">Django</span>
+                                    <span class="skill-tag">Express</span>
+                                    <span class="skill-tag">Flask</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Data & Analytics</h3>
+                                <div class="skill-list">
+                                    <span class="skill-tag">Big Data</span>
+                                    <span class="skill-tag">Machine Learning</span>
+                                    <span class="skill-tag">Data Pipelines</span>
+                                    <span class="skill-tag">Real-time Analytics</span>
+                                    <span class="skill-tag">Time Series</span>
+                                    <span class="skill-tag">NLP</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Tools & Platforms</h3>
+                                <div class="skill-list">
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">Jenkins</span>
+                                    <span class="skill-tag">Kibana</span>
+                                    <span class="skill-tag">Prometheus</span>
+                                    <span class="skill-tag">Grafana</span>
+                                    <span class="skill-tag">Elasticsearch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="resume-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-project-diagram"></i> Key Projects
+                    </h2>
+                    <div class="section-content">
+                        <div class="project-entry">
+                            <div class="project-header">
+                                <div class="project-title">Distributed Predictive Analytics for Industrial Robots</div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">Distributed Computing</span>
+                            </div>
+                            <p>Scalable system for real-time predictive maintenance using distributed machine learning algorithms. Published in International Journal of Engineering and Advanced Technology.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/sajalsuhane/realtimepredictiveanalyticsforrobots.git" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                                <span>|</span>
+                                <a href="https://www.ijeat.org/wp-content/uploads/papers/v9i3/C5342029320.pdf" class="project-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Paper
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-entry">
+                            <div class="project-header">
+                                <div class="project-title">Real-time Distributed Face Recognition</div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="skill-tag">Computer Vision</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">OpenCV</span>
+                            </div>
+                            <p>Distributed face detection system with real-time processing and database matching capabilities.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/sajalsuhane/realtime_face_detection.git" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-entry">
+                            <div class="project-header">
+                                <div class="project-title">Distributed Audio Sentiment Analysis</div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="skill-tag">NLP</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Speech Processing</span>
+                            </div>
+                            <p>Scalable audio-to-text conversion with distributed sentiment analysis pipeline.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/sajalsuhane/audiosentimentanalysis.git" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-entry">
+                            <div class="project-header">
+                                <div class="project-title">Cloud Migration & Optimization</div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Distributed Systems</span>
+                                <span class="skill-tag">Performance Optimization</span>
+                            </div>
+                            <p>Led migration of on-premises financial workflows to AWS Cloud, achieving 90% reduction in processing time and significant cost savings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="resume-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-certificate"></i> Certifications
+                    </h2>
+                    <div class="section-content">
+                        <div class="certification-entry">
+                            <div class="certification-name">IBM Data Science Professional Certification</div>
+                            <div class="certification-source">IBM - 2023</div>
+                        </div>
+
+                        <div class="certification-entry">
+                            <div class="certification-name">ignio AIOps Certifications</div>
+                            <div class="certification-source">Digitate - 2019</div>
+                        </div>
+
+                        <div class="certification-entry">
+                            <div class="certification-name">Advanced Google Analytics</div>
+                            <div class="certification-source">Google - 2020</div>
+                        </div>
+
+                        <div class="certification-entry">
+                            <div class="certification-name">Machine Learning by Andrew Ng</div>
+                            <div class="certification-source">Stanford University (Coursera) - 2019</div>
+                        </div>
+
+                        <div class="certification-entry">
+                            <div class="certification-name">Deep Learning: Face Recognition</div>
+                            <div class="certification-source">LinkedIn Learning - 2020</div>
+                        </div>
+
+                        <div class="certification-entry">
+                            <div class="certification-name">Multiple Data Science & Analytics Certifications</div>
+                            <div class="certification-source">LinkedIn Learning - 2019-2021</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications -->
+                <div class="resume-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-book"></i> Publications & Research
+                    </h2>
+                    <div class="section-content">
+                        <div class="certification-entry">
+                            <div class="certification-name">Real-time Predictive Analytics for Industrial Robots</div>
+                            <div class="certification-source">International Journal of Engineering and Advanced Technology (IJEAT) - 2020</div>
+                            <p style="margin-top: 0.5rem;">Research paper on distributed predictive maintenance systems for industrial automation, published in peer-reviewed journal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="resume-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-info-circle"></i> Additional Information
+                    </h2>
+                    <div class="section-content">
+                        <p><strong>Languages:</strong> English (Fluent), Hindi (Native)</p>
+                        <p><strong>Interests:</strong> Distributed Systems Research, Cloud Architecture, Open Source Contribution, Mentoring, Technical Writing</p>
+                        <p><strong>Professional Affiliations:</strong> Computer Society of India (Former President - Student Chapter)</p>
+                        <p><strong>Open Source:</strong> Active contributor to various open-source projects on GitHub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 Sajal Suhane. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Print functionality
+        function printResume() {
+            window.print();
+        }
+
+        // Add print button click handler
+        document.querySelector('.download-btn').addEventListener('click', function(e) {
+            // This is already handled by the download attribute
+        });
+    </script>
+</body>
 </html>

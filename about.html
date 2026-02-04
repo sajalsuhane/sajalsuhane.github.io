@@ -1,136 +1,955 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>SAJAL SUHANE - About</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-n07BApD5KXpEM3AfjFUC06z5TCbyr9E1p7IvaB5tD72Bt1zOkS2i10+6k+X2ifV9Oz11q0L3F+EJYPn8/ZnAE/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sajal Suhane | Distributed Systems Expert</title>
+    <meta name="description" content="Learn about Sajal Suhane's journey as a Senior Software Engineer specializing in distributed systems and cloud architecture">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .section-content {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .section-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-left: 1rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background-color: var(--white);
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: -120px;
+            top: -5px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .timeline-content .subtitle {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Visualization */
+        .skills-section {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-level {
+            display: flex;
+            gap: 0.3rem;
+        }
+
+        .skill-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+        }
+
+        .skill-dot.active {
+            background-color: var(--primary);
+        }
+
+        /* Education Section */
+        .education-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-logo {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .education-logo i {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .education-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-size: 1.3rem;
+        }
+
+        .education-content .degree {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .education-content .duration {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .testimonial {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonial-role {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--white);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copyright {
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+                margin-left: 0.5rem;
+            }
+
+            .timeline-year {
+                position: static;
+                margin-bottom: 0.5rem;
+            }
+
+            .education-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
-<style>
-    body {
-        background-color: #f9f9f9;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-    }
-
-    header {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 2rem;
-    }
-
-    header img {
-        width: 40%; /* Set the width to 40% of the container */
-        height: auto;
-        border-radius: 50%;
-        aspect-ratio: 1/1; /* Maintain a 1:1 aspect ratio */
-        max-width: 40%;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-
-    header img {
-        max-width: 200px;
-        height: auto;
-        border-radius: 50%;
-    }
-
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: white;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        color: #333; /* Increased contrast for visibility */
-    }
-
-    p {
-        font-size: 1.2rem;
-        color: #444;
-    }
-
-    a {
-        color: #007bff;
-        text-decoration: none;
-    }
-</style>
 <body>
-
+    <!-- Header -->
     <header>
-        <h1>
-            <img src="images/sajal_port.jpg" alt="Portfolio Image" style="border-radius: 50%;">
-            Sajal Suhane
-        </h1>
+        <div class="container">
+            <img src="images/sajal_port.jpg" alt="Sajal Suhane" class="profile-img">
+            <h1>Sajal Suhane</h1>
+            <p class="tagline">Senior Software Engineer | Distributed Systems Architect</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sajalsuhane" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.github.com/sajalsuhane" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:ssuhane31@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>
-                I'm an accomplished software developer currently driving fintech innovation. Graduated from the University of Texas at Dallas in 2023, I have a passion for technology and its intersection with finance.
-            </p>
-        </section>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Sajal Suhane</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <section>
-            <h2>Education</h2>
-            <p>
-                During my undergraduate studies, I pursued computer engineering and honed my skills in software development. Now, as a Master of Science graduate from UTD, I continue to excel in software engineering.
-            </p>
-        </section>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- About Me Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-content">
+                    <div style="background-color: rgba(37, 99, 235, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                        <p style="font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;">👋 Hello! I'm Sajal Suhane</p>
+                        <p style="margin-bottom: 1rem;">I'm a Senior Software Engineer and Distributed Systems Architect with a passion for building scalable, high-performance systems that solve complex business problems. With 5+ years of experience at leading financial institutions and technology companies, I specialize in designing and implementing distributed architectures that deliver exceptional performance and reliability.</p>
+                        <p style="margin-bottom: 1rem;">🎯 <strong>My Mission:</strong> To create elegant distributed systems that seamlessly scale while maintaining simplicity and robustness.</p>
+                        <p>💡 <strong>My Philosophy:</strong> Great software emerges from the intersection of solid architecture, clean code, and continuous improvement.</p>
+                    </div>
+                    <p>I'm a passionate Senior Software Engineer with a strong focus on distributed systems, cloud architecture, and fintech innovation. My journey in technology began with a fascination for how complex systems work together to solve real-world problems, and this passion has driven my career ever since.</p>
 
-        <section>
-            <h2>Experience</h2>
-            <h3>Analyst, Software Developer - CFOSS</h3>
-            <p>
-                At Goldman Sachs, I lead the design and development of a cloud-native architecture, crafting scalable, high-performance solutions aligned with organizational goals. I orchestrated on-premises workflow migration to AWS Cloud, achieving a remarkable 90% reduction in processing time from 20 minutes to under 2 minutes. My innovative problem-solving skills drive substantial time and cost savings, staying up-to-date with cloud tech trends.
-            </p>
-            
-            <h3>Summer Analyst, Software Developer – Controllers Division</h3>
-            <p>
-                During my internship at Goldman Sachs, I worked on developing an in-house operational storage tool, handling billions of data every second. I created dashboards in Kibana, resulting in decreased ingestion time by 30%. Additionally, I contributed to a POC for a queuing system, estimated to increase efficiency by 31.7%.
-            </p>
-            
-            <h3>Graduate Research Assistant, Analytics and Product Development</h3>
-            <p>
-                At the University of Texas at Dallas, I developed algorithms to collect, clean, and analyze data generated by biomedical sensors, reducing human FTE by 0.6. I also assisted in building databases to organize sensor data, worked on cross-platform applications, and increased operational efficiency by 70%.
-            </p>
-            
-            <h3>Assistant Systems Engineer, Developer – Digitate</h3>
-            <p>
-                At Tata Consultancy Services, I enhanced ignio's capabilities, reducing overall MTTR by 7000 hours/month across 100+ clients. I completed Architecture & Security Reviews for UK/EU-based clients and successfully deployed ignio in their environments. I also developed AI-based algorithms for autonomous actions, saving 9000+ human hours/year worldwide.
-            </p>
-        </section>
+                    <p>With a Master's degree in Computer Science from the University of Texas at Dallas and extensive experience at leading financial institutions like Goldman Sachs, I specialize in building scalable, high-performance distributed systems that power modern enterprise applications.</p>
 
-        <section>
-            <h2>Undergraduate Experience</h2>
-            <h3>Rotaract Club</h3>
-            <p>
-                As a member of the Rotaract Club during my undergraduate studies, I actively participated in community service events, including providing support to orphanages, city waste cleanup, and assisting traffic police. I organized an International Quiz Competition, and the profits were donated to cancer patients for their treatment.
-            </p>
-            
-            <h3>Machine Learning Certification</h3>
-            <p>
-                My fascination with machine learning led me to complete a certification in Machine Learning from Stanford University via Coursera. The course, taught by Prof. Andrew Ng, covered a wide range of machine learning topics, including Linear Regression, Logistic Regression, Neural Networks, SVM, KNN, and Recommender Systems. Alongside my studies, I gained valuable teamwork experience.
-            </p>
-            
-            <h2>Learn More</h2>
-            <p>
-                To know more about me, please refer to my <a href="cv.pdf">CV</a>.
-            </p>
-        </section>
-    </div>
+                    <p>My expertise lies at the intersection of software engineering and distributed computing, where I design and implement robust architectures that can handle massive scale while maintaining reliability and performance.</p>
 
+                    <h3 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.3rem;">My Approach</h3>
+                    <ul>
+                        <li><strong>Problem Solving:</strong> I thrive on tackling complex technical challenges and finding elegant solutions</li>
+                        <li><strong>Innovation:</strong> Always exploring new technologies and approaches to stay at the cutting edge</li>
+                        <li><strong>Collaboration:</strong> Building strong teams and fostering knowledge sharing</li>
+                        <li><strong>Quality:</strong> Delivering robust, maintainable, and well-documented code</li>
+                        <li><strong>Continuous Learning:</strong> Constantly expanding my skills and knowledge base</li>
+                    </ul>
+
+                    <p>Outside of work, I enjoy contributing to open-source projects, writing technical articles, and mentoring aspiring software engineers. I'm particularly passionate about distributed systems education and helping others understand the complexities and beauty of modern software architecture.</p>
+                </div>
+            </section>
+
+            <!-- Professional Journey Section -->
+            <section id="experience" class="section">
+                <h2 class="section-title">Professional Journey</h2>
+                <div class="section-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">2021 - Present</span>
+                            <div class="timeline-content">
+                                <h3>Senior Software Engineer - Goldman Sachs</h3>
+                                <p class="subtitle">CFOSS Division - Cloud & Distributed Systems</p>
+                                <p>Leading the design and development of cloud-native distributed systems for financial workflows. My work focuses on:</p>
+                                <ul>
+                                    <li>Architecting scalable microservices for real-time financial data processing</li>
+                                    <li>Migrating legacy on-premises systems to distributed cloud environments</li>
+                                    <li>Implementing fault-tolerant distributed architectures</li>
+                                    <li>Optimizing system performance for high-frequency trading applications</li>
+                                    <li>Building distributed caching and event-driven systems</li>
+                                </ul>
+                                <p><strong>Key Achievement:</strong> Led a major cloud migration project that reduced processing time by 90% (from 20 minutes to under 2 minutes), resulting in significant cost savings and improved operational efficiency.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-year">2020 - 2021</span>
+                            <div class="timeline-content">
+                                <h3>Software Development Intern - Goldman Sachs</h3>
+                                <p class="subtitle">Controllers Division - Distributed Data Systems</p>
+                                <p>Developed operational storage tools and distributed data processing systems:</p>
+                                <ul>
+                                    <li>Built systems handling billions of data points per second</li>
+                                    <li>Created Kibana dashboards that reduced data ingestion time by 30%</li>
+                                    <li>Designed proof-of-concept for distributed queuing system with 31.7% efficiency gain</li>
+                                    <li>Implemented distributed tracing for complex financial workflows</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-year">2019 - 2020</span>
+                            <div class="timeline-content">
+                                <h3>Research Assistant - University of Texas at Dallas</h3>
+                                <p class="subtitle">Analytics and Product Development</p>
+                                <p>Conducted research on distributed systems for biomedical applications:</p>
+                                <ul>
+                                    <li>Developed distributed algorithms for processing biomedical sensor data</li>
+                                    <li>Designed scalable databases for IoT sensor networks</li>
+                                    <li>Implemented real-time data pipelines reducing human effort by 0.6 FTE</li>
+                                    <li>Built cross-platform applications with 70% operational efficiency improvement</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-year">2017 - 2019</span>
+                            <div class="timeline-content">
+                                <h3>Systems Engineer - Tata Consultancy Services</h3>
+                                <p class="subtitle">Digitate - AIOps Platform Development</p>
+                                <p>Enhanced the ignio AIOps platform with distributed intelligence:</p>
+                                <ul>
+                                    <li>Implemented distributed algorithms for autonomous IT operations</li>
+                                    <li>Reduced Mean Time To Resolution (MTTR) by 7000 hours/month across 100+ clients</li>
+                                    <li>Developed AI-based algorithms saving 9000+ human hours/year worldwide</li>
+                                    <li>Conducted architecture and security reviews for UK/EU-based clients</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2 class="section-title">Key Achievements</h2>
+                <div class="section-content">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div style="background-color: rgba(37, 99, 235, 0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">🚀 Performance Optimization</h3>
+                            <p>Led cloud migration project reducing processing time by 90% (from 20 minutes to under 2 minutes) for critical financial workflows.</p>
+                        </div>
+                        <div style="background-color: rgba(37, 99, 235, 0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">🤖 AI Operations Innovation</h3>
+                            <p>Developed distributed algorithms for ignio AIOps platform, reducing MTTR by 7000 hours/month across 100+ clients.</p>
+                        </div>
+                        <div style="background-color: rgba(37, 99, 235, 0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">📊 Data Efficiency</h3>
+                            <p>Created Kibana dashboards and distributed queuing systems achieving 30-31.7% efficiency improvements in data processing.</p>
+                        </div>
+                        <div style="background-color: rgba(37, 99, 235, 0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">🎓 Research Contributions</h3>
+                            <p>Published research on distributed predictive maintenance systems in International Journal of Engineering and Advanced Technology.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <h2 class="section-title">Education & Training</h2>
+                <div class="section-content">
+                    <div class="education-item">
+                        <div class="education-logo">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>University of Texas at Dallas</h3>
+                            <p class="degree">Master of Science in Computer Science</p>
+                            <p class="duration">2021 - 2023</p>
+                            <p>Specialized in distributed systems, cloud computing, and advanced software engineering. Conducted research on scalable architectures for real-time data processing.</p>
+                            <p><strong>Key Courses:</strong> Distributed Systems, Cloud Computing, Advanced Algorithms, Big Data Analytics, Machine Learning</p>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-logo">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Undergraduate Studies</h3>
+                            <p class="degree">Bachelor of Engineering in Computer Engineering</p>
+                            <p class="duration">2013 - 2017</p>
+                            <p>Built strong foundation in computer science fundamentals, software development, and system design.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-logo">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Professional Certifications</h3>
+                            <p class="degree">Continuous Learning & Specialization</p>
+                            <p class="duration">Ongoing</p>
+                            <p>Comprehensive training in distributed systems, cloud architecture, and emerging technologies:</p>
+                            <ul>
+                                <li>IBM Data Science Professional Certification</li>
+                                <li>ignio AIOps Certifications by Digitate</li>
+                                <li>Advanced Google Analytics Certification</li>
+                                <li>Machine Learning by Andrew Ng (Stanford)</li>
+                                <li>Deep Learning: Face Recognition (LinkedIn Learning)</li>
+                                <li>Multiple data science and analytics certifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section id="skills" class="section">
+                <h2 class="section-title">Technical Skills & Expertise</h2>
+                <div class="skills-section">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Distributed Systems</h3>
+                            <div class="skill-item">
+                                <span class="skill-name">Microservices Architecture</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Cloud-Native Development</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Consensus Algorithms</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Fault Tolerance</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Cloud & DevOps</h3>
+                            <div class="skill-item">
+                                <span class="skill-name">AWS Architecture</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Kubernetes</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Docker</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">CI/CD Pipelines</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Programming Languages</h3>
+                            <div class="skill-item">
+                                <span class="skill-name">Java</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Go</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Data & Analytics</h3>
+                            <div class="skill-item">
+                                <span class="skill-name">Big Data Processing</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Machine Learning</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Real-time Analytics</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Data Pipeline Design</span>
+                                <div class="skill-level">
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot active"></span>
+                                    <span class="skill-dot"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Philosophy Section -->
+            <section class="section">
+                <h2 class="section-title">My Engineering Philosophy</h2>
+                <div class="section-content">
+                    <p>Throughout my career, I've developed a set of principles that guide my approach to software engineering and distributed systems design:</p>
+
+                    <h3 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.3rem;">1. Distributed Systems First</h3>
+                    <p>I believe in designing systems with distribution in mind from the beginning. This means thinking about scalability, fault tolerance, and network partitioning as fundamental requirements, not afterthoughts.</p>
+
+                    <h3 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.3rem;">2. Performance Through Architecture</h3>
+                    <p>True performance comes from good architecture, not just optimization. I focus on designing systems that are inherently efficient through proper partitioning, caching strategies, and data locality.</p>
+
+                    <h3 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.3rem;">3. Resilience by Design</h3>
+                    <p>Distributed systems must be designed to handle failure. I implement comprehensive error handling, retry mechanisms, circuit breakers, and graceful degradation patterns.</p>
+
+                    <h3 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.3rem;">4. Observability as a Priority</h3>
+                    <p>You can't manage what you can't measure. I build comprehensive monitoring, logging, and tracing into every system from day one.</p>
+
+                    <h3 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.3rem;">5. Continuous Improvement</h3>
+                    <p>The technology landscape is always evolving. I'm committed to lifelong learning and staying current with the latest advancements in distributed systems and cloud computing.</p>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Let's Build Something Amazing Together</h2>
+                <p>Whether you're looking to design a scalable distributed system, migrate to the cloud, or optimize your existing architecture, I'd love to discuss how we can work together to achieve your goals.</p>
+                <a href="index.html#contact" class="btn">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 Sajal Suhane. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="cv.html">Resume</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active class to current section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
