@@ -3,177 +3,139 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
-  const skills = [
-    { name: 'Distributed Systems', icon: '🌐' },
-    { name: 'Cloud Computing', icon: '☁️' },
-    { name: 'Apache Spark', icon: '⚡' },
-    { name: 'Java/Spring Boot', icon: '☕' },
-    { name: 'Python', icon: '🐍' },
-    { name: 'Machine Learning', icon: '🤖' },
-    { name: 'Real-time Processing', icon: '⚙️' },
-    { name: 'AWS', icon: '☁️' }
+  const projects = [
+    {
+      title: 'Cloud Migration Framework',
+      company: 'Goldman Sachs',
+      description: 'Migrated on-premises financial workflows to AWS Cloud, achieving 90% reduction in processing time (20min → 2min)',
+      impact: '90% performance improvement',
+      tags: ['AWS', 'Distributed Systems', 'Cloud Architecture']
+    },
+    {
+      title: 'Distributed AIOps Platform',
+      company: 'Tata Consultancy Services',
+      description: 'Enhanced ignio AIOps platform with distributed intelligence and autonomous remediation',
+      impact: '7,000 hours/month MTTR reduction',
+      tags: ['AIOps', 'Distributed Algorithms', 'Automation']
+    },
+    {
+      title: 'Real-time Predictive Analytics',
+      company: 'Research Publication',
+      description: 'Published research on distributed predictive maintenance systems for industrial robots',
+      impact: 'Peer-reviewed IJEAT publication',
+      tags: ['Machine Learning', 'IoT', 'Real-time Processing']
+    },
+    {
+      title: 'Distributed Queuing System',
+      company: 'Goldman Sachs',
+      description: 'Proof-of-concept distributed queuing system with Kibana dashboards',
+      impact: '31.7% efficiency improvement',
+      tags: ['Kafka', 'Data Pipelines', 'Observability']
+    }
   ]
 
-  const stats = [
-    { value: '5+', label: 'Years Experience' },
-    { value: '15+', label: 'Projects Completed' },
-    { value: '90%', label: 'Performance Improvement' },
-    { value: '7000+', label: 'Hours Saved (Monthly)' }
+  const experience = [
+    {
+      role: 'Senior Software Engineer',
+      company: 'Goldman Sachs',
+      division: 'CFOSS Division',
+      period: '2021 - Present',
+      description: 'Lead distributed systems development for financial workflows'
+    },
+    {
+      role: 'Software Development Intern',
+      company: 'Goldman Sachs',
+      division: 'Controllers Division',
+      period: '2020 - 2021',
+      description: 'Operational storage tools handling billions of data points/second'
+    },
+    {
+      role: 'Research Assistant',
+      company: 'University of Texas at Dallas',
+      division: 'Distributed Systems Research',
+      period: '2019 - 2020',
+      description: 'Distributed algorithms for biomedical sensor data processing'
+    },
+    {
+      role: 'Systems Engineer',
+      company: 'Tata Consultancy Services',
+      division: 'Digitate (ignio AIOps)',
+      period: '2017 - 2019',
+      description: 'Enhanced AIOps platform, saved 9,000+ human hours/year globally'
+    }
   ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  }
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-300 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
+    <div className="min-h-screen bg-white dark:bg-black">
+      {/* Hero Section - Brutalist Typography */}
+      <section className="min-h-[90vh] flex items-center border-b-4 border-black dark:border-white">
+        <div className="container mx-auto px-6 lg:px-12 py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="max-w-5xl">
+              {/* Name - Massive Typography */}
+              <h1 className="text-7xl sm:text-8xl lg:text-9xl font-black text-black dark:text-white mb-8 leading-none tracking-tight">
+                SAJAL<br />SUHANE
+              </h1>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="mb-8 inline-block"
-            >
-              <img
-                src="/images/sajal_port.jpg"
-                alt="Sajal Suhane"
-                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white shadow-2xl mx-auto"
-                onError={(e) => {
-                  e.target.src = 'https://via.placeholder.com/200/4F46E5/FFFFFF?text=SS'
-                }}
-              />
-            </motion.div>
+              {/* Title - Bold */}
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-6 max-w-3xl">
+                Senior Software Engineer specializing in Distributed Systems & Cloud Architecture
+              </p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
-            >
-              Sajal Suhane
-            </motion.h1>
+              {/* Current Role */}
+              <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-12">
+                @ Goldman Sachs · Dallas, TX
+              </p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-xl md:text-2xl mb-4 text-blue-100"
-            >
-              Senior Software Engineer @ Goldman Sachs
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg md:text-xl mb-8 text-blue-50 max-w-2xl mx-auto"
-            >
-              Distributed Systems Architect | Cloud Computing Specialist | Fintech Innovation
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
-            >
-              <Link 
-                to="/about"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                View My Work
-                <ArrowRightIcon className="w-5 h-5 ml-2" />
-              </Link>
-              <a 
-                href="https://linkedin.com/in/sajalsuhane"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Connect on LinkedIn
-              </a>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20"
+              {/* CTAs - Sharp Boxes */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  to="/about"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-lg hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
                 >
-                  <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-sm md:text-base text-blue-100">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+                  VIEW WORK
+                  <ArrowRightIcon className="w-5 h-5 ml-2" />
+                </Link>
+                <a 
+                  href="https://linkedin.com/in/sajalsuhane"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white border-2 border-black dark:border-white font-bold text-lg hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LINKEDIN
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-2 bg-white rounded-full mt-2"
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+      <section className="py-24 border-b-4 border-black dark:border-white">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-                About Me
+              <h2 className="text-5xl sm:text-6xl font-black text-black dark:text-white mb-8 tracking-tight">
+                ABOUT
               </h2>
-              <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
-                <p className="text-lg md:text-xl leading-relaxed mb-6">
-                  I'm a <span className="text-blue-600 dark:text-blue-400 font-semibold">Senior Software Engineer</span> specializing in distributed systems, cloud architecture, and fintech innovation. With experience at <span className="font-semibold">Goldman Sachs</span> and a strong academic background from the <span className="font-semibold">University of Texas at Dallas</span>, I build scalable, fault-tolerant systems that solve complex business challenges.
+              <div className="space-y-6 text-xl text-gray-800 dark:text-gray-200 leading-relaxed">
+                <p>
+                  I design and build <strong className="font-bold text-black dark:text-white">distributed systems</strong> that scale. With 5+ years at <strong className="font-bold text-black dark:text-white">Goldman Sachs</strong> and research from <strong className="font-bold text-black dark:text-white">UT Dallas</strong>, I focus on cloud-native architecture, microservices, and real-time data processing.
                 </p>
-                <p className="text-lg md:text-xl leading-relaxed">
-                  My expertise spans Apache Spark, distributed algorithms, machine learning, and building high-performance backend systems using Java, Python, and modern cloud technologies. I've achieved <span className="text-blue-600 dark:text-blue-400 font-semibold">90% performance improvements</span> in financial workflows and reduced MTTR by <span className="text-blue-600 dark:text-blue-400 font-semibold">7,000+ hours/month</span> through innovative distributed systems design.
+                <p>
+                  My work has achieved <strong className="font-bold text-black dark:text-white">90% performance improvements</strong> in financial workflows and reduced Mean Time To Resolution by <strong className="font-bold text-black dark:text-white">7,000+ hours/month</strong> across 100+ global clients.
+                </p>
+                <p>
+                  Published researcher in distributed predictive maintenance systems. Expert in Apache Spark, Java/Spring Boot, Python, AWS, and Kubernetes.
                 </p>
               </div>
             </motion.div>
@@ -181,76 +143,187 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4">
+      {/* Selected Projects - Card Grid */}
+      <section className="py-24 border-b-4 border-black dark:border-white">
+        <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Core Expertise
+            <h2 className="text-5xl sm:text-6xl font-black text-black dark:text-white mb-4 tracking-tight">
+              SELECTED WORK
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Technologies and domains I specialize in
+            <p className="text-xl text-gray-700 dark:text-gray-300">
+              Projects that demonstrate distributed systems expertise
             </p>
           </motion.div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-          >
-            {skills.map((skill, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {projects.map((project, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="border-4 border-black dark:border-white p-8 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200 cursor-pointer group"
               >
-                <div className="text-4xl mb-3">{skill.icon}</div>
-                <span className="font-semibold text-gray-900 dark:text-white">{skill.name}</span>
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-2xl font-bold group-hover:text-white dark:group-hover:text-black">
+                    {project.title}
+                  </h3>
+                  <ArrowRightIcon className="w-6 h-6 flex-shrink-0 ml-4" />
+                </div>
+                <p className="text-sm font-bold mb-3 text-gray-600 dark:text-gray-400 group-hover:text-gray-300 dark:group-hover:text-gray-700">
+                  {project.company}
+                </p>
+                <p className="text-base mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="mb-4">
+                  <span className="text-sm font-bold bg-black text-white dark:bg-white dark:text-black px-3 py-1 group-hover:bg-white group-hover:text-black dark:group-hover:bg-black dark:group-hover:text-white">
+                    {project.impact}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, i) => (
+                    <span 
+                      key={i}
+                      className="text-xs font-mono border-2 border-black dark:border-white px-2 py-1 group-hover:border-white dark:group-hover:border-black"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
             ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            className="mt-12 text-center"
+          >
+            <Link
+              to="/research"
+              className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-lg hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
+            >
+              VIEW ALL PROJECTS
+              <ArrowRightIcon className="w-5 h-5 ml-2" />
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div className="container mx-auto px-4">
+      {/* Experience - Timeline */}
+      <section className="py-24 border-b-4 border-black dark:border-white">
+        <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
+            className="mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Let's Build Something Amazing Together
+            <h2 className="text-5xl sm:text-6xl font-black text-black dark:text-white mb-4 tracking-tight">
+              EXPERIENCE
             </h2>
-            <p className="text-xl mb-8 text-blue-100">
-              I'm always interested in hearing about new projects and opportunities.
+          </motion.div>
+
+          <div className="max-w-4xl space-y-8">
+            {experience.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="border-l-4 border-black dark:border-white pl-8 pb-8"
+              >
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
+                  <div>
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-1">
+                      {exp.role}
+                    </h3>
+                    <p className="text-lg font-bold text-gray-700 dark:text-gray-300">
+                      {exp.company}
+                    </p>
+                    <p className="text-base text-gray-600 dark:text-gray-400">
+                      {exp.division}
+                    </p>
+                  </div>
+                  <span className="text-base font-mono text-gray-600 dark:text-gray-400 mt-2 sm:mt-0 whitespace-nowrap">
+                    {exp.period}
+                  </span>
+                </div>
+                <p className="text-lg text-gray-800 dark:text-gray-200">
+                  {exp.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            className="mt-12"
+          >
+            <Link
+              to="/about"
+              className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-lg hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
+            >
+              FULL CV
+              <ArrowRightIcon className="w-5 h-5 ml-2" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-24">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl"
+          >
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-black dark:text-white mb-8 tracking-tight">
+              LET'S WORK<br />TOGETHER
+            </h2>
+            <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-12 max-w-2xl">
+              Interested in distributed systems, cloud architecture, or fintech innovation? Let's connect.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="mailto:ssuhane31@gmail.com"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-lg hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
               >
-                Get In Touch
+                EMAIL ME
               </a>
               <a 
                 href="https://github.com/sajalsuhane"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white border-2 border-black dark:border-white font-bold text-lg hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View GitHub
+                GITHUB
+              </a>
+              <a 
+                href="/cv.pdf"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white border-2 border-black dark:border-white font-bold text-lg hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                DOWNLOAD CV
               </a>
             </div>
           </motion.div>

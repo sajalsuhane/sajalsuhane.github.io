@@ -1,303 +1,321 @@
 import { motion } from 'framer-motion'
-import { CodeBracketIcon, BeakerIcon, RocketLaunchIcon } from '@heroicons/react/24/outline'
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 
 export default function Research() {
-  const projects = [
+  const publications = [
     {
-      title: "Real-time Predictive Analytics for Industrial Robots",
-      category: "Research",
-      image: "/images/img_finalyearproj.jpg",
-      description: "Distributed system for real-time predictive maintenance of industrial machinery using machine learning algorithms. Achieved 92% accuracy in failure prediction.",
-      technologies: ["Python", "Apache Spark", "Machine Learning", "Distributed Computing", "Time Series Analysis"],
-      github: "https://github.com/sajalsuhane/realtimepredictiveanalyticsforrobots.git",
-      paper: "https://www.ijeat.org/wp-content/uploads/papers/v9i3/C5342029320.pdf",
-      highlights: [
-        "Published in International Journal of Engineering and Advanced Technology (IJEAT)",
-        "92% accuracy in predictive failure detection",
-        "Scalable architecture handling 1M+ sensor readings/second",
-        "Reduced maintenance costs by 40% through predictive approach"
-      ]
+      title: 'Real-time Predictive Analytics for Industrial Robots',
+      journal: 'International Journal of Engineering and Advanced Technology (IJEAT)',
+      date: '2020',
+      volume: 'Volume 9, Issue 3',
+      description: 'Published research on distributed predictive maintenance systems for industrial automation. Novel approach to distributed machine learning for real-time predictive analytics.',
+      impact: [
+        'Cited by researchers in industrial automation field',
+        'Distributed machine learning for IoT sensor networks',
+        'Real-time data pipelines for predictive maintenance',
+      ],
+      url: 'https://www.ijeat.org/wp-content/uploads/papers/v9i3/C5342029320.pdf',
+      tags: ['Machine Learning', 'Distributed Systems', 'IoT', 'Predictive Analytics'],
     },
-    {
-      title: "Distributed Face Recognition System",
-      category: "Computer Vision",
-      image: "/images/face_recog.jpg",
-      description: "Real-time distributed face detection and recognition system with database matching capabilities using OpenCV and deep learning.",
-      technologies: ["Python", "OpenCV", "Deep Learning", "Computer Vision", "Real-time Processing"],
-      github: "https://github.com/sajalsuhane/realtime_face_detection.git",
-      highlights: [
-        "Real-time face detection with 95% accuracy",
-        "Distributed architecture for parallel processing",
-        "Database integration for identity matching",
-        "Sub-second response time for recognition"
-      ]
-    },
-    {
-      title: "Cloud-Native Financial Workflow System",
-      category: "Distributed Systems",
-      image: "/images/newbg.jpg",
-      description: "Architected and implemented scalable microservices for financial data processing at Goldman Sachs. Handles billions of transactions with fault tolerance.",
-      technologies: ["Java", "Spring Boot", "AWS", "Kubernetes", "Apache Kafka", "Distributed Tracing"],
-      highlights: [
-        "90% reduction in processing time through cloud migration",
-        "Handles billions of transactions per day",
-        "Sub-millisecond latency for critical operations",
-        "Fault-tolerant architecture with 99.99% uptime"
-      ]
-    },
-    {
-      title: "Audio Sentiment Analysis Pipeline",
-      category: "NLP & Machine Learning",
-      image: "/images/img_audiosentiment.png",
-      description: "Scalable audio-to-text conversion with distributed sentiment analysis pipeline. Processes multiple audio streams in parallel.",
-      technologies: ["Python", "NLP", "Speech Processing", "Distributed Computing", "Machine Learning"],
-      github: "https://github.com/sajalsuhane/audiosentimentanalysis.git",
-      highlights: [
-        "Distributed audio processing pipeline",
-        "Real-time sentiment analysis",
-        "Support for multiple audio formats",
-        "85% accuracy in sentiment classification"
-      ]
-    },
-    {
-      title: "Autonomous IT Operations Platform (ignio)",
-      category: "AIOps",
-      image: "/images/ignio AIOps.jpg",
-      description: "Enhanced AIOps platform with distributed algorithms and autonomous remediation systems serving 100+ global clients.",
-      technologies: ["Java", "Python", "Machine Learning", "Distributed Systems", "Event Processing"],
-      highlights: [
-        "Reduced MTTR by 7,000 hours/month",
-        "Autonomous remediation saving 9,000+ hours/year",
-        "Serving 100+ enterprise clients globally",
-        "Distributed consensus algorithms for multi-node decisions"
-      ]
-    },
-    {
-      title: "ISKCON Temple Management System",
-      category: "Mobile Application",
-      image: "/images/pic02.jpeg",
-      description: "Distributed scheduling system for temple operations with real-time coordination features and volunteer management.",
-      technologies: ["Android", "Java", "Firebase", "Real-time Database", "Push Notifications"],
-      github: "https://github.com/sajalsuhane/Iskcon_Temple_Android_Application.git",
-      highlights: [
-        "Real-time event scheduling and coordination",
-        "Volunteer management system",
-        "Push notifications for event updates",
-        "Offline-first architecture with sync"
-      ]
-    },
-    {
-      title: "Smart Power Consumption Optimizer",
-      category: "IoT & Optimization",
-      image: "/images/pic03.jpg",
-      description: "Distributed system for optimizing household power consumption based on variable pricing and usage patterns.",
-      technologies: ["Python", "Time Series Analysis", "Optimization Algorithms", "IoT", "Data Analytics"],
-      github: "https://github.com/sajalsuhane/household_power_consumption.git",
-      highlights: [
-        "20-30% reduction in power costs",
-        "Real-time usage monitoring and optimization",
-        "Predictive analytics for consumption patterns",
-        "Integration with smart home devices"
-      ]
-    },
-    {
-      title: "Biomedical Sensor Data Processing System",
-      category: "Healthcare & IoT",
-      image: "/images/bg.jpg",
-      description: "Distributed algorithms for processing biomedical sensor data from IoT networks with real-time analytics.",
-      technologies: ["Python", "Apache Spark", "IoT", "Real-time Analytics", "Distributed Systems"],
-      highlights: [
-        "Scalable database for 1M+ sensor events/second",
-        "Real-time anomaly detection",
-        "70% operational efficiency improvement",
-        "HIPAA-compliant data handling"
-      ]
-    }
   ]
 
-  const skills = {
-    "Distributed Systems": [
-      "Microservices Architecture",
-      "Event-Driven Systems",
-      "Distributed Caching",
-      "Consensus Algorithms",
-      "Fault Tolerance",
-      "Load Balancing"
-    ],
-    "Cloud & DevOps": [
-      "AWS (EC2, S3, Lambda, RDS)",
-      "Kubernetes & Docker",
-      "CI/CD Pipelines",
-      "Infrastructure as Code",
-      "Monitoring & Observability",
-      "Serverless Architecture"
-    ],
-    "Programming Languages": [
-      "Java & Spring Boot",
-      "Python",
-      "JavaScript/TypeScript",
-      "Go",
-      "SQL",
-      "Bash/Shell"
-    ],
-    "Data & ML": [
-      "Apache Spark",
-      "Apache Kafka",
-      "Machine Learning",
-      "Deep Learning",
-      "Time Series Analysis",
-      "Real-time Analytics"
-    ],
-    "Databases": [
-      "PostgreSQL",
-      "MongoDB",
-      "Redis",
-      "Cassandra",
-      "Elasticsearch",
-      "DynamoDB"
-    ],
-    "Tools & Frameworks": [
-      "Git & GitHub",
-      "Kubernetes",
-      "Terraform",
-      "Grafana & Prometheus",
-      "ELK Stack",
-      "Apache Airflow"
-    ]
-  }
+  const projects = [
+    {
+      title: 'Cloud Migration Framework for Financial Systems',
+      company: 'Goldman Sachs - CFOSS Division',
+      period: '2021 - Present',
+      description: 'Led the design and implementation of a comprehensive cloud migration framework for legacy financial systems, transforming on-premises workflows into cloud-native, distributed architectures on AWS.',
+      challenge: 'Legacy financial workflows were processing in 20+ minutes with limited scalability and reliability. Required migration to cloud while maintaining data integrity and regulatory compliance.',
+      solution: [
+        'Designed microservices architecture using Spring Boot and AWS services',
+        'Implemented distributed event-driven processing with Kafka',
+        'Created fault-tolerant data pipelines with AWS Lambda and Step Functions',
+        'Built comprehensive monitoring using CloudWatch and Prometheus',
+      ],
+      impact: [
+        '90% reduction in processing time (20 minutes → 2 minutes)',
+        'Adopted as best practice within Goldman Sachs CFOSS division',
+        'Presented at internal technical conferences',
+      ],
+      technologies: ['AWS', 'Spring Boot', 'Kafka', 'Microservices', 'Lambda', 'CloudWatch'],
+    },
+    {
+      title: 'Distributed AIOps Platform Enhancement',
+      company: 'Tata Consultancy Services - Digitate',
+      period: '2017 - 2019',
+      description: 'Enhanced the ignio AIOps platform with distributed intelligence and autonomous remediation capabilities, serving Fortune 500 clients globally.',
+      challenge: 'Manual IT operations resolution taking thousands of hours per month across 100+ global clients. Needed intelligent automation to reduce MTTR.',
+      solution: [
+        'Developed distributed algorithms for anomaly detection',
+        'Implemented autonomous remediation workflows',
+        'Created predictive models for incident prevention',
+        'Built scalable architecture for multi-tenant operations',
+      ],
+      impact: [
+        'Reduced MTTR by 7,000 hours/month across 100+ clients',
+        'Saved 9,000+ human hours/year worldwide',
+        'Patent-pending technology in AI-powered operations',
+      ],
+      technologies: ['AIOps', 'Machine Learning', 'Distributed Systems', 'Python', 'Automation'],
+    },
+    {
+      title: 'Distributed Queuing System with Observability',
+      company: 'Goldman Sachs - Controllers Division',
+      period: '2020 - 2021',
+      description: 'Designed and implemented a proof-of-concept distributed queuing system with comprehensive observability dashboards for operational storage workflows.',
+      challenge: 'Existing operational storage tools handling billions of data points per second lacked visibility and efficient queue management.',
+      solution: [
+        'Built distributed queuing system using Kafka',
+        'Created real-time Kibana dashboards for monitoring',
+        'Implemented distributed tracing with OpenTelemetry',
+        'Designed data retention and archival strategies',
+      ],
+      impact: [
+        '31.7% efficiency improvement in data processing',
+        'Real-time visibility into operational workflows',
+        'Scalable architecture for future growth',
+      ],
+      technologies: ['Kafka', 'Kibana', 'Elasticsearch', 'OpenTelemetry', 'Java'],
+    },
+    {
+      title: 'Biomedical Sensor Data Processing Platform',
+      company: 'University of Texas at Dallas',
+      period: '2019 - 2020',
+      description: 'Developed distributed algorithms and scalable databases for processing biomedical sensor data from IoT networks in real-time.',
+      challenge: 'Processing large volumes of biomedical sensor data requiring 0.6 FTE of manual effort. Needed automated, real-time processing pipeline.',
+      solution: [
+        'Designed scalable time-series databases',
+        'Implemented real-time data pipelines using Apache Spark',
+        'Created distributed analytics workflows',
+        'Built APIs for data access and visualization',
+      ],
+      impact: [
+        'Reduced human effort by 0.6 FTE through automation',
+        'Real-time processing of biomedical sensor data',
+        'Foundation for published research',
+      ],
+      technologies: ['Apache Spark', 'Time-series DB', 'Python', 'IoT', 'Real-time Processing'],
+    },
+  ]
+
+  const openSource = [
+    {
+      name: 'Distributed Systems Resources',
+      description: 'Curated collection of distributed systems papers, talks, and implementations',
+      status: 'Active',
+    },
+    {
+      name: 'Cloud Architecture Patterns',
+      description: 'Reference implementations of cloud-native architecture patterns',
+      status: 'Planned',
+    },
+  ]
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
-        <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-white dark:bg-black">
+      {/* Header */}
+      <section className="py-24 border-b-4 border-black dark:border-white">
+        <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
           >
-            <BeakerIcon className="w-16 h-16 mx-auto mb-6" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Projects & Research</h1>
-            <p className="text-xl md:text-2xl text-blue-100">
-              Building distributed systems that scale, innovate, and deliver impact
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black text-black dark:text-white mb-8 tracking-tight">
+              RESEARCH &<br />PROJECTS
+            </h1>
+            <p className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 max-w-4xl leading-relaxed">
+              Published research, production systems, and open-source contributions in distributed systems and cloud architecture.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      {/* Publications */}
+      <section className="py-24 border-b-4 border-black dark:border-white">
+        <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <RocketLaunchIcon className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Featured Projects
+            <h2 className="text-5xl font-black text-black dark:text-white mb-4 tracking-tight">
+              PUBLICATIONS
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              A selection of distributed systems, machine learning, and software engineering projects
+            <p className="text-xl text-gray-700 dark:text-gray-300">
+              Peer-reviewed research contributions
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="space-y-8">
+            {publications.map((pub, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="border-4 border-black dark:border-white p-8"
+              >
+                <div className="mb-6">
+                  <h3 className="text-3xl font-bold text-black dark:text-white mb-3">
+                    {pub.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-4 text-base text-gray-700 dark:text-gray-300 font-bold mb-4">
+                    <span>{pub.journal}</span>
+                    <span>•</span>
+                    <span>{pub.date}</span>
+                    <span>•</span>
+                    <span>{pub.volume}</span>
+                  </div>
+                  <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6">
+                    {pub.description}
+                  </p>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="text-lg font-bold text-black dark:text-white mb-3 uppercase tracking-wide">
+                    Impact
+                  </h4>
+                  <ul className="space-y-2">
+                    {pub.impact.map((item, i) => (
+                      <li key={i} className="flex items-start text-base text-gray-800 dark:text-gray-200">
+                        <span className="mr-3 mt-1 text-black dark:text-white font-bold">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {pub.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-black dark:bg-white text-white dark:text-black font-mono text-sm font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={pub.url}
+                  className="inline-flex items-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-base hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  READ PAPER
+                  <ArrowTopRightOnSquareIcon className="w-5 h-5 ml-2" />
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Major Projects */}
+      <section className="py-24 border-b-4 border-black dark:border-white">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <h2 className="text-5xl font-black text-black dark:text-white mb-4 tracking-tight">
+              MAJOR PROJECTS
+            </h2>
+            <p className="text-xl text-gray-700 dark:text-gray-300">
+              Production systems and proof-of-concept implementations
+            </p>
+          </motion.div>
+
+          <div className="space-y-8">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="border-4 border-black dark:border-white"
               >
-                {/* Project Image */}
-                <div className="h-48 overflow-hidden bg-gradient-to-br from-blue-400 to-indigo-600">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = 'none'
-                      e.target.parentElement.innerHTML = `<div class="w-full h-full flex items-center justify-center text-white text-4xl">${project.category === 'Research' ? '🔬' : project.category === 'Computer Vision' ? '👁️' : project.category === 'Distributed Systems' ? '🌐' : project.category === 'NLP & Machine Learning' ? '🤖' : project.category === 'AIOps' ? '⚙️' : project.category === 'Mobile Application' ? '📱' : project.category === 'IoT & Optimization' ? '💡' : '🔧'}</div>`
-                    }}
-                  />
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <div className="mb-3">
-                    <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs font-semibold">
-                      {project.category}
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                {/* Header */}
+                <div className="p-8 border-b-4 border-black dark:border-white">
+                  <h3 className="text-3xl font-bold text-black dark:text-white mb-3">
                     {project.title}
                   </h3>
-
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+                    <p className="text-lg font-bold text-gray-700 dark:text-gray-300">
+                      {project.company}
+                    </p>
+                    <span className="text-base font-mono text-gray-700 dark:text-gray-300 font-bold mt-2 sm:mt-0">
+                      {project.period}
+                    </span>
+                  </div>
+                  <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
                     {project.description}
                   </p>
+                </div>
 
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                {/* Challenge */}
+                <div className="p-8 border-b-4 border-black dark:border-white bg-gray-50 dark:bg-gray-900">
+                  <h4 className="text-xl font-bold text-black dark:text-white mb-3 uppercase tracking-wide">
+                    Challenge
+                  </h4>
+                  <p className="text-base text-gray-800 dark:text-gray-200 leading-relaxed">
+                    {project.challenge}
+                  </p>
+                </div>
+
+                {/* Solution */}
+                <div className="p-8 border-b-4 border-black dark:border-white">
+                  <h4 className="text-xl font-bold text-black dark:text-white mb-4 uppercase tracking-wide">
+                    Solution
+                  </h4>
+                  <ul className="space-y-2">
+                    {project.solution.map((item, i) => (
+                      <li key={i} className="flex items-start text-base text-gray-800 dark:text-gray-200">
+                        <span className="mr-3 mt-1 text-black dark:text-white font-bold">›</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Impact */}
+                <div className="p-8 border-b-4 border-black dark:border-white bg-gray-50 dark:bg-gray-900">
+                  <h4 className="text-xl font-bold text-black dark:text-white mb-4 uppercase tracking-wide">
+                    Impact
+                  </h4>
+                  <ul className="space-y-2">
+                    {project.impact.map((item, i) => (
+                      <li key={i} className="flex items-start text-base">
+                        <span className="mr-3 mt-1 text-black dark:text-white font-bold">•</span>
+                        <span className="font-bold text-gray-800 dark:text-gray-200">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Technologies */}
+                <div className="p-8">
+                  <h4 className="text-lg font-bold text-black dark:text-white mb-4 uppercase tracking-wide">
+                    Technologies
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs"
+                        className="px-3 py-1 bg-black dark:bg-white text-white dark:text-black font-mono text-sm font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-
-                  {/* Highlights */}
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">Key Highlights:</h4>
-                    <ul className="space-y-1">
-                      {project.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start text-sm text-gray-600 dark:text-gray-300">
-                          <span className="text-blue-600 dark:text-blue-400 mr-2">▸</span>
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex gap-3">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-semibold"
-                      >
-                        <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                        </svg>
-                        GitHub
-                      </a>
-                    )}
-                    {project.paper && (
-                      <a
-                        href={project.paper}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-semibold"
-                      >
-                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        Paper
-                      </a>
-                    )}
-                  </div>
                 </div>
               </motion.div>
             ))}
@@ -305,78 +323,68 @@ export default function Research() {
         </div>
       </section>
 
-      {/* Technical Skills Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4">
+      {/* Open Source */}
+      <section className="py-24">
+        <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <CodeBracketIcon className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Technical Skills
+            <h2 className="text-5xl font-black text-black dark:text-white mb-4 tracking-tight">
+              OPEN SOURCE
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Technologies and tools I work with
+            <p className="text-xl text-gray-700 dark:text-gray-300">
+              Community contributions and shared knowledge
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {Object.entries(skills).map(([category, items], index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
+            {openSource.map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 shadow-md"
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="border-4 border-black dark:border-white p-8 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200 cursor-pointer group"
               >
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
-                  {category}
-                </h3>
-                <ul className="space-y-2">
-                  {items.map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-blue-600 dark:text-blue-400 mr-2">▸</span>
-                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-2xl font-bold">
+                    {project.name}
+                  </h3>
+                  <span className={`text-xs font-bold px-2 py-1 ${
+                    project.status === 'Active' 
+                      ? 'bg-black text-white dark:bg-white dark:text-black group-hover:bg-white group-hover:text-black dark:group-hover:bg-black dark:group-hover:text-white' 
+                      : 'bg-gray-300 text-black dark:bg-gray-700 dark:text-white'
+                  }`}>
+                    {project.status}
+                  </span>
+                </div>
+                <p className="text-base leading-relaxed">
+                  {project.description}
+                </p>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="mt-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Explore More on GitHub
-            </h2>
-            <p className="text-xl mb-8 text-blue-100">
-              Check out my complete portfolio of open-source projects and contributions
-            </p>
             <a
               href="https://github.com/sajalsuhane"
+              className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-lg hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-white text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-              </svg>
-              Visit GitHub Profile
+              VIEW GITHUB PROFILE
+              <ArrowTopRightOnSquareIcon className="w-5 h-5 ml-2" />
             </a>
           </motion.div>
         </div>
