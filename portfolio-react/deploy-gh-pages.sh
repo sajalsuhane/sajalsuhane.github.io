@@ -4,25 +4,38 @@
 
 echo "🚀 Starting GitHub Pages deployment..."
 
-# Update Vite config for GitHub Pages
-echo "📝 Updating Vite configuration for GitHub Pages..."
-sed -i 's|base: '/'|base: '/sajalsuhane.github.io/'|' vite.config.js
+# Install dependencies if needed
+if [ ! -d "node_modules" ]; then
+    echo "📦 Installing dependencies..."
+    npm install
+fi
 
 # Build the project
 echo "🔨 Building project..."
 npm run build
 
-# Deploy to GitHub Pages
+# Check if build was successful
+if [ ! -d "dist" ]; then
+    echo "❌ Build failed! dist directory not found."
+    exit 1
+fi
+
+# Deploy to GitHub Pages (gh-pages branch)
 echo "🌍 Deploying to GitHub Pages..."
-npx gh-pages -d dist
+npx gh-pages -d dist -b gh-pages
 
-# Revert Vite config changes
-echo "🔙 Reverting Vite configuration..."
-sed -i 's|base: '/sajalsuhane.github.io/'|base: '/'|' vite.config.js
+if [ $? -eq 0 ]; then
+    echo "✅ Deployment complete!"
+    echo "📍 Your portfolio will be available at: https://sajalsuhane.github.io"
+    echo "⏳ It may take a few minutes for changes to appear."
+else
+    echo "❌ Deployment failed!"
+    exit 1
+fi
 
-echo "✅ Deployment complete!"
-echo "📍 Your portfolio will be available at: https://sajalsuhane.github.io"
-
-# Clean up
+# Clean up is optional - keep dist for verification if needed
 echo "🧹 Cleaning up..."
-rm -rf dist
+# Uncomment the next line if you want to remove the dist folder after deployment
+# rm -rf dist
+
+echo "✨ All done!"
