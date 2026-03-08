@@ -1,29 +1,42 @@
 import { Link, useLocation } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
   const location = useLocation()
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location])
 
   const navigation = [
-    { name: 'HOME', href: '/' },
-    { name: 'ABOUT', href: '/about' },
-    { name: 'RESEARCH', href: '/research' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Projects', href: '/research' },
   ]
 
   const isActive = (path) => location.pathname === path
 
   return (
-    <nav className="sticky top-0 z-50 bg-white dark:bg-black border-b-4 border-black dark:border-white">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
+      scrolled ? 'glass shadow-lg shadow-black/20' : 'bg-transparent'
+    }`}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           <Link 
             to="/" 
-            className="text-2xl font-black text-black dark:text-white tracking-tight hover:opacity-70 transition-opacity"
+            className="text-xl font-bold text-white hover:text-blue-400 transition-colors"
           >
-            SS
+            <span className="gradient-text font-black text-2xl">SS</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,10 +45,10 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-6 py-3 font-bold text-base transition-colors duration-200 ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(item.href)
-                    ? 'bg-black dark:bg-white text-white dark:text-black'
-                    : 'text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black'
+                    ? 'bg-blue-500/10 text-blue-400'
+                    : 'text-slate-300 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {item.name}
@@ -43,58 +56,66 @@ export default function Navbar() {
             ))}
             <a
               href="/cv.pdf"
-              className="ml-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-base hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
+              className="ml-3 px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-medium hover:bg-blue-500/20 hover:border-blue-500/50 transition-all duration-200"
               target="_blank"
               rel="noopener noreferrer"
             >
-              CV
+              Resume
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+            className="md:hidden p-2 text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <XMarkIcon className="h-8 w-8" />
+              <XMarkIcon className="h-6 w-6" />
             ) : (
-              <Bars3Icon className="h-8 w-8" />
+              <Bars3Icon className="h-6 w-6" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t-2 border-black dark:border-white">
-            <div className="flex flex-col gap-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="pb-4 pt-2 space-y-1">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                      isActive(item.href)
+                        ? 'bg-blue-500/10 text-blue-400'
+                        : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <a
+                  href="/cv.pdf"
+                  className="block px-4 py-3 rounded-lg text-base font-medium text-blue-400 hover:bg-blue-500/10 transition-all duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}
-                  className={`px-6 py-3 font-bold text-base transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'bg-black dark:bg-white text-white dark:text-black'
-                      : 'text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black'
-                  }`}
                 >
-                  {item.name}
-                </Link>
-              ))}
-              <a
-                href="/cv.pdf"
-                className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-base hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-              >
-                CV
-              </a>
-            </div>
-          </div>
-        )}
+                  Resume
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   )

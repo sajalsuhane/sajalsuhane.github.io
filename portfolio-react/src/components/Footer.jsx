@@ -8,26 +8,24 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="border-t-4 border-black dark:border-white bg-white dark:bg-black">
-      <div className="container mx-auto px-6 lg:px-12 py-12">
+    <footer className="border-t border-slate-800/50 bg-slate-950/50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          {/* Name/Brand */}
           <div>
-            <h3 className="text-2xl font-black text-black dark:text-white mb-2">
-              SAJAL SUHANE
+            <h3 className="text-lg font-bold text-white mb-1">
+              Sajal Suhane
             </h3>
-            <p className="text-base text-gray-700 dark:text-gray-300">
-              Senior Software Engineer · Distributed Systems
+            <p className="text-sm text-slate-400">
+              Senior Software Engineer &middot; Distributed Systems &middot; Dallas, TX
             </p>
           </div>
 
-          {/* Links */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3">
             {links.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-6 py-3 bg-white dark:bg-black text-black dark:text-white border-2 border-black dark:border-white font-bold text-base hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200"
+                className="px-4 py-2 rounded-lg text-sm text-slate-400 border border-slate-700/50 hover:text-white hover:border-slate-600 transition-all duration-200"
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               >
@@ -37,10 +35,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-12 pt-8 border-t-2 border-black dark:border-white">
-          <p className="text-base text-gray-600 dark:text-gray-400 font-mono">
-            © {currentYear} Sajal Suhane. All rights reserved.
+        <div className="mt-8 pt-8 border-t border-slate-800/50">
+          <p className="text-sm text-slate-500">
+            &copy; {currentYear} Sajal Suhane. Built with React &amp; Tailwind CSS.
           </p>
         </div>
       </div>
