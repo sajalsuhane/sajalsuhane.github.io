@@ -25,7 +25,7 @@ export default function Research() {
       company: 'Goldman Sachs - CFOSS Division',
       period: '2021 - Present',
       description: 'Led the design and implementation of a comprehensive cloud migration framework for legacy financial systems, transforming on-premises workflows into cloud-native, distributed architectures on AWS.',
-      challenge: 'Legacy financial workflows were processing in 20+ minutes with limited scalability and reliability. Required migration to cloud while maintaining data integrity and regulatory compliance.',
+      challenge: 'Legacy financial workflows processing in 20+ minutes with limited scalability. Required migration to cloud while maintaining data integrity and regulatory compliance.',
       solution: [
         'Designed microservices architecture using Spring Boot and AWS services',
         'Implemented distributed event-driven processing with Kafka',
@@ -33,11 +33,12 @@ export default function Research() {
         'Built comprehensive monitoring using CloudWatch and Prometheus',
       ],
       impact: [
-        '90% reduction in processing time (20 minutes → 2 minutes)',
+        '90% reduction in processing time (20min → 2min)',
         'Adopted as best practice within Goldman Sachs CFOSS division',
         'Presented at internal technical conferences',
       ],
       technologies: ['AWS', 'Spring Boot', 'Kafka', 'Microservices', 'Lambda', 'CloudWatch'],
+      color: 'blue',
     },
     {
       title: 'Distributed AIOps Platform Enhancement',
@@ -56,7 +57,8 @@ export default function Research() {
         'Saved 9,000+ human hours/year worldwide',
         'Patent-pending technology in AI-powered operations',
       ],
-      technologies: ['AIOps', 'Machine Learning', 'Distributed Systems', 'Python', 'Automation'],
+      technologies: ['AIOps', 'Machine Learning', 'Python', 'Automation', 'Distributed Systems'],
+      color: 'purple',
     },
     {
       title: 'Distributed Queuing System with Observability',
@@ -76,6 +78,7 @@ export default function Research() {
         'Scalable architecture for future growth',
       ],
       technologies: ['Kafka', 'Kibana', 'Elasticsearch', 'OpenTelemetry', 'Java'],
+      color: 'cyan',
     },
     {
       title: 'Biomedical Sensor Data Processing Platform',
@@ -95,222 +98,208 @@ export default function Research() {
         'Foundation for published research',
       ],
       technologies: ['Apache Spark', 'Time-series DB', 'Python', 'IoT', 'Real-time Processing'],
+      color: 'emerald',
     },
   ]
 
-  const openSource = [
-    {
-      name: 'Distributed Systems Resources',
-      description: 'Curated collection of distributed systems papers, talks, and implementations',
-      status: 'Active',
-    },
-    {
-      name: 'Cloud Architecture Patterns',
-      description: 'Reference implementations of cloud-native architecture patterns',
-      status: 'Planned',
-    },
-  ]
+  const colorBorder = {
+    blue: 'border-blue-500/20 hover:border-blue-500/40',
+    purple: 'border-purple-500/20 hover:border-purple-500/40',
+    cyan: 'border-cyan-500/20 hover:border-cyan-500/40',
+    emerald: 'border-emerald-500/20 hover:border-emerald-500/40',
+  }
+
+  const colorAccent = {
+    blue: 'text-blue-400',
+    purple: 'text-purple-400',
+    cyan: 'text-cyan-400',
+    emerald: 'text-emerald-400',
+  }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="min-h-screen">
       {/* Header */}
-      <section className="py-24 border-b-4 border-black dark:border-white">
-        <div className="container mx-auto px-6 lg:px-12">
+      <section className="hero-gradient grid-bg py-20 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black text-black dark:text-white mb-8 tracking-tight">
-              RESEARCH &<br />PROJECTS
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">
+              Research &{' '}
+              <span className="gradient-text">Projects</span>
             </h1>
-            <p className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 max-w-4xl leading-relaxed">
-              Published research, production systems, and open-source contributions in distributed systems and cloud architecture.
+            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
+              Published research, production systems, and technical contributions in distributed systems and cloud architecture.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Publications */}
-      <section className="py-24 border-b-4 border-black dark:border-white">
-        <div className="container mx-auto px-6 lg:px-12">
+      <section className="py-20 sm:py-24 border-t border-slate-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
+            transition={{ duration: 0.5 }}
+            className="mb-10"
           >
-            <h2 className="text-5xl font-black text-black dark:text-white mb-4 tracking-tight">
-              PUBLICATIONS
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+              Publications
             </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
-              Peer-reviewed research contributions
-            </p>
+            <p className="text-slate-400">Peer-reviewed research contributions</p>
           </motion.div>
 
-          <div className="space-y-8">
-            {publications.map((pub, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-                className="border-4 border-black dark:border-white p-8"
-              >
-                <div className="mb-6">
-                  <h3 className="text-3xl font-bold text-black dark:text-white mb-3">
-                    {pub.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-4 text-base text-gray-700 dark:text-gray-300 font-bold mb-4">
-                    <span>{pub.journal}</span>
-                    <span>•</span>
-                    <span>{pub.date}</span>
-                    <span>•</span>
-                    <span>{pub.volume}</span>
-                  </div>
-                  <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6">
-                    {pub.description}
-                  </p>
-                </div>
+          {publications.map((pub, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="gradient-border rounded-xl p-6 sm:p-8 glow-hover"
+            >
+              <h3 className="text-xl font-bold text-white mb-3">
+                {pub.title}
+              </h3>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-400 mb-4">
+                <span>{pub.journal}</span>
+                <span className="hidden sm:inline">&middot;</span>
+                <span>{pub.date}</span>
+                <span className="hidden sm:inline">&middot;</span>
+                <span>{pub.volume}</span>
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed mb-5">
+                {pub.description}
+              </p>
 
-                <div className="mb-6">
-                  <h4 className="text-lg font-bold text-black dark:text-white mb-3 uppercase tracking-wide">
-                    Impact
-                  </h4>
-                  <ul className="space-y-2">
-                    {pub.impact.map((item, i) => (
-                      <li key={i} className="flex items-start text-base text-gray-800 dark:text-gray-200">
-                        <span className="mr-3 mt-1 text-black dark:text-white font-bold">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {pub.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-black dark:bg-white text-white dark:text-black font-mono text-sm font-medium"
-                    >
-                      {tag}
-                    </span>
+              <div className="mb-5">
+                <p className="text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Impact</p>
+                <ul className="space-y-1.5">
+                  {pub.impact.map((item, i) => (
+                    <li key={i} className="flex items-start text-sm text-slate-400">
+                      <span className="mr-2 mt-1 text-blue-400">&#x2022;</span>
+                      <span>{item}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
+              </div>
 
-                <a
-                  href={pub.url}
-                  className="inline-flex items-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-base hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  READ PAPER
-                  <ArrowTopRightOnSquareIcon className="w-5 h-5 ml-2" />
-                </a>
-              </motion.div>
-            ))}
-          </div>
+              <div className="flex flex-wrap gap-1.5 mb-5">
+                {pub.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="px-2.5 py-1 rounded-md text-xs font-mono text-slate-400 bg-slate-800/50 border border-slate-700/50"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={pub.url}
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-medium hover:bg-blue-500/20 transition-all duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read Paper
+                <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-1.5" />
+              </a>
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* Major Projects */}
-      <section className="py-24 border-b-4 border-black dark:border-white">
-        <div className="container mx-auto px-6 lg:px-12">
+      <section className="py-20 sm:py-24 border-t border-slate-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
+            transition={{ duration: 0.5 }}
+            className="mb-10"
           >
-            <h2 className="text-5xl font-black text-black dark:text-white mb-4 tracking-tight">
-              MAJOR PROJECTS
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+              Major Projects
             </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
-              Production systems and proof-of-concept implementations
-            </p>
+            <p className="text-slate-400">Production systems and proof-of-concept implementations</p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="border-4 border-black dark:border-white"
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className={`rounded-xl border ${colorBorder[project.color]} bg-slate-900/50 overflow-hidden glow-hover`}
               >
                 {/* Header */}
-                <div className="p-8 border-b-4 border-black dark:border-white">
-                  <h3 className="text-3xl font-bold text-black dark:text-white mb-3">
-                    {project.title}
-                  </h3>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
-                    <p className="text-lg font-bold text-gray-700 dark:text-gray-300">
-                      {project.company}
-                    </p>
-                    <span className="text-base font-mono text-gray-700 dark:text-gray-300 font-bold mt-2 sm:mt-0">
+                <div className="p-6 sm:p-8">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-slate-400 font-medium">
+                        {project.company}
+                      </p>
+                    </div>
+                    <span className="text-xs font-mono text-slate-500 whitespace-nowrap">
                       {project.period}
                     </span>
                   </div>
-                  <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
+                  <p className="text-sm text-slate-300 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
 
                 {/* Challenge */}
-                <div className="p-8 border-b-4 border-black dark:border-white bg-gray-50 dark:bg-gray-900">
-                  <h4 className="text-xl font-bold text-black dark:text-white mb-3 uppercase tracking-wide">
-                    Challenge
-                  </h4>
-                  <p className="text-base text-gray-800 dark:text-gray-200 leading-relaxed">
+                <div className="px-6 sm:px-8 py-5 bg-slate-800/20 border-y border-slate-800/50">
+                  <p className="text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Challenge</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">
                     {project.challenge}
                   </p>
                 </div>
 
-                {/* Solution */}
-                <div className="p-8 border-b-4 border-black dark:border-white">
-                  <h4 className="text-xl font-bold text-black dark:text-white mb-4 uppercase tracking-wide">
-                    Solution
-                  </h4>
-                  <ul className="space-y-2">
-                    {project.solution.map((item, i) => (
-                      <li key={i} className="flex items-start text-base text-gray-800 dark:text-gray-200">
-                        <span className="mr-3 mt-1 text-black dark:text-white font-bold">›</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Impact */}
-                <div className="p-8 border-b-4 border-black dark:border-white bg-gray-50 dark:bg-gray-900">
-                  <h4 className="text-xl font-bold text-black dark:text-white mb-4 uppercase tracking-wide">
-                    Impact
-                  </h4>
-                  <ul className="space-y-2">
-                    {project.impact.map((item, i) => (
-                      <li key={i} className="flex items-start text-base">
-                        <span className="mr-3 mt-1 text-black dark:text-white font-bold">•</span>
-                        <span className="font-bold text-gray-800 dark:text-gray-200">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Solution & Impact */}
+                <div className="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-3 font-medium">Solution</p>
+                    <ul className="space-y-2">
+                      {project.solution.map((item, i) => (
+                        <li key={i} className="flex items-start text-sm text-slate-400">
+                          <span className="mr-2 mt-1 w-1 h-1 rounded-full bg-slate-600 flex-shrink-0"></span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-3 font-medium">Impact</p>
+                    <ul className="space-y-2">
+                      {project.impact.map((item, i) => (
+                        <li key={i} className="flex items-start text-sm">
+                          <span className={`mr-2 mt-0.5 ${colorAccent[project.color]}`}>&#x2713;</span>
+                          <span className={`font-medium ${colorAccent[project.color]}`}>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
                 {/* Technologies */}
-                <div className="p-8">
-                  <h4 className="text-lg font-bold text-black dark:text-white mb-4 uppercase tracking-wide">
-                    Technologies
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
+                <div className="px-6 sm:px-8 pb-6 sm:pb-8">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 bg-black dark:bg-white text-white dark:text-black font-mono text-sm font-medium"
+                        className="px-2.5 py-1 rounded-md text-xs font-mono text-slate-400 bg-slate-800/50 border border-slate-700/50"
                       >
                         {tech}
                       </span>
@@ -323,68 +312,29 @@ export default function Research() {
         </div>
       </section>
 
-      {/* Open Source */}
-      <section className="py-24">
-        <div className="container mx-auto px-6 lg:px-12">
+      {/* GitHub CTA */}
+      <section className="py-20 sm:py-24 border-t border-slate-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
+            transition={{ duration: 0.5 }}
           >
-            <h2 className="text-5xl font-black text-black dark:text-white mb-4 tracking-tight">
-              OPEN SOURCE
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              Open Source
             </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
-              Community contributions and shared knowledge
+            <p className="text-slate-400 mb-8 max-w-md mx-auto">
+              Check out my repositories and contributions on GitHub.
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
-            {openSource.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="border-4 border-black dark:border-white p-8 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200 cursor-pointer group"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-2xl font-bold">
-                    {project.name}
-                  </h3>
-                  <span className={`text-xs font-bold px-2 py-1 ${
-                    project.status === 'Active' 
-                      ? 'bg-black text-white dark:bg-white dark:text-black group-hover:bg-white group-hover:text-black dark:group-hover:bg-black dark:group-hover:text-white' 
-                      : 'bg-gray-300 text-black dark:bg-gray-700 dark:text-white'
-                  }`}>
-                    {project.status}
-                  </span>
-                </div>
-                <p className="text-base leading-relaxed">
-                  {project.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="mt-12"
-          >
             <a
               href="https://github.com/sajalsuhane"
-              className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white font-bold text-lg hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors duration-200"
+              className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/25"
               target="_blank"
               rel="noopener noreferrer"
             >
-              VIEW GITHUB PROFILE
-              <ArrowTopRightOnSquareIcon className="w-5 h-5 ml-2" />
+              View GitHub Profile
+              <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2" />
             </a>
           </motion.div>
         </div>
