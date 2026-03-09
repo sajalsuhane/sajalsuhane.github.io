@@ -4,82 +4,139 @@ import { Link } from 'react-router-dom'
 
 export default function Home() {
   const stats = [
-    { value: '90%', label: 'Processing Time Reduction', detail: 'Cloud migration at Goldman Sachs' },
-    { value: '7,000+', label: 'Hours/Month Saved', detail: 'MTTR reduction across 100+ clients' },
-    { value: '9,000+', label: 'Human Hours/Year Saved', detail: 'AIOps autonomous remediation' },
-    { value: '31.7%', label: 'Efficiency Improvement', detail: 'Distributed queuing system' },
+    { value: '$1M+', label: 'Annual Cost Savings', detail: 'Sybase IQ to cloud-native migration' },
+    { value: '90%', label: 'Processing Time Reduction', detail: 'On-prem Spark → AWS Glue migration' },
+    { value: '135%', label: 'Faster Ingestions', detail: 'Kubernetes-backed microservices' },
+    { value: '650%', label: 'Faster Query Execution', detail: 'Spring Boot + Snowflake platform' },
   ]
 
   const projects = [
     {
-      title: 'Cloud Migration Framework',
-      company: 'Goldman Sachs',
-      description: 'Migrated on-premises financial workflows to AWS Cloud, achieving 90% reduction in processing time.',
-      impact: '20min → 2min processing',
-      tags: ['AWS', 'Microservices', 'Spring Boot', 'Kafka'],
+      title: 'Cloud-Native Platform Overhaul',
+      company: 'Goldman Sachs – Associate',
+      description: 'Led transformation of legacy Sybase IQ operational store into cloud-native architecture using Kubernetes, Snowflake, and event-driven ingestion pipelines.',
+      impact: '$1M+ annual cost savings',
+      tags: ['Kubernetes', 'Snowflake', 'Spring Boot', 'Contour HTTPProxy'],
       gradient: 'from-blue-500/10 to-cyan-500/10',
       border: 'border-blue-500/20 hover:border-blue-500/40',
     },
     {
-      title: 'Distributed AIOps Platform',
-      company: 'TCS Digitate',
-      description: 'Enhanced ignio AIOps platform with distributed intelligence and autonomous remediation capabilities.',
-      impact: '7,000 hrs/month MTTR reduction',
-      tags: ['AIOps', 'ML', 'Python', 'Automation'],
+      title: 'AWS Glue Migration Framework',
+      company: 'Goldman Sachs – Analyst',
+      description: 'Developed reusable migration framework enabling teams to move on-prem Spark workflows to AWS Glue with minimal changes.',
+      impact: '$230K savings/workflow · 90% faster',
+      tags: ['AWS Glue', 'Spark', 'S3', 'Python'],
       gradient: 'from-purple-500/10 to-pink-500/10',
       border: 'border-purple-500/20 hover:border-purple-500/40',
     },
     {
-      title: 'Real-time Predictive Analytics',
-      company: 'Published Research',
-      description: 'Distributed predictive maintenance systems for industrial robots. Published in IJEAT journal.',
-      impact: 'Peer-reviewed publication',
-      tags: ['Machine Learning', 'IoT', 'Real-time'],
-      gradient: 'from-emerald-500/10 to-teal-500/10',
-      border: 'border-emerald-500/20 hover:border-emerald-500/40',
-    },
-    {
-      title: 'Distributed Queuing System',
-      company: 'Goldman Sachs',
-      description: 'Proof-of-concept distributed queuing system with Kibana dashboards for operational storage.',
-      impact: '31.7% efficiency gain',
-      tags: ['Kafka', 'Elasticsearch', 'Kibana'],
+      title: 'Distributed Operational Store',
+      company: 'Goldman Sachs – Intern',
+      description: 'Engineered core components of a distributed operational store processing 3B+ events per second across Risk & Finance teams.',
+      impact: '31.7% efficiency improvement',
+      tags: ['Kafka', 'Kibana', 'Elasticsearch', 'Java'],
       gradient: 'from-amber-500/10 to-orange-500/10',
       border: 'border-amber-500/20 hover:border-amber-500/40',
+    },
+    {
+      title: 'Biomedical Sensor Analytics',
+      company: 'UT Dallas',
+      description: 'Developed automated algorithms for cleaning and analyzing high-frequency biomedical sensor data from wearable devices.',
+      impact: '0.6 FTE reduction · 70% efficiency gain',
+      tags: ['Python', 'Real-time Processing', 'Cross-platform'],
+      gradient: 'from-emerald-500/10 to-teal-500/10',
+      border: 'border-emerald-500/20 hover:border-emerald-500/40',
     },
   ]
 
   const experience = [
     {
-      role: 'Senior Software Engineer',
+      role: 'Software Developer – Associate',
+      company: 'Goldman Sachs',
+      division: 'Tech Lead, 10-member team',
+      period: 'Dec 2024 – Present',
+      current: true,
+      achievements: [
+        'Led Sybase IQ → cloud-native migration, achieving $1M+ annual cost savings',
+        'Deployed scalable platform using Kubernetes, Snowflake, Contour HTTPProxy',
+        'Delivered 135% faster ingestions and 650% faster query execution',
+      ],
+    },
+    {
+      role: 'Software Developer – Analyst',
       company: 'Goldman Sachs',
       division: 'CFOSS Division',
-      period: '2021 - Present',
-      current: true,
+      period: 'Jun 2023 – Dec 2024',
+      achievements: [
+        'Built reusable Spark → AWS Glue migration framework ($230K savings/workflow)',
+        'Co-built AI-powered knowledge chatbot reducing support resolution from 5hrs to 1hr',
+        'Built S3-backed computation system for Market Risk, improving efficiency by 25%',
+      ],
     },
     {
-      role: 'Software Development Intern',
+      role: 'Software Developer Intern',
       company: 'Goldman Sachs',
       division: 'Controllers Division',
-      period: '2020 - 2021',
+      period: 'Jun 2022 – Aug 2022',
+      achievements: [
+        'Engineered distributed operational store processing 3B+ events/sec',
+        'Built queuing-based ingestion POC with 31.7% efficiency improvement',
+      ],
     },
     {
-      role: 'Research Assistant',
-      company: 'UT Dallas',
-      division: 'Distributed Systems',
-      period: '2019 - 2020',
-    },
-    {
-      role: 'Systems Engineer',
-      company: 'TCS Digitate',
-      division: 'ignio AIOps',
-      period: '2017 - 2019',
+      role: 'Software Developer',
+      company: 'University of Texas at Dallas',
+      division: 'Biomedical Sensor Research',
+      period: 'Nov 2021 – May 2023',
+      achievements: [
+        'Automated biomedical sensor data processing, reducing manual effort by 0.6 FTE',
+        'Designed cross-platform apps for real-time sensor analytics (70% efficiency gain)',
+      ],
     },
   ]
 
+  const education = [
+    {
+      degree: 'M.S. Computer Science',
+      institution: 'University of Texas at Dallas',
+      location: 'Texas, USA',
+    },
+    {
+      degree: 'B.E. Computer Science',
+      institution: 'Savitribai Phule Pune University',
+      location: 'Maharashtra, India',
+    },
+  ]
+
+  const skills = {
+    'Languages': {
+      items: ['Java', 'Python', 'SQL', 'Scala', 'C++'],
+      color: 'blue',
+    },
+    'Distributed Systems': {
+      items: ['Event-Driven Systems', 'High-Throughput Ingestion', 'Queues', 'Microservices'],
+      color: 'purple',
+    },
+    'Cloud & Infra': {
+      items: ['Kubernetes', 'AWS (Glue, S3, DynamoDB)', 'Docker', 'CI/CD'],
+      color: 'cyan',
+    },
+    'Big Data & Observability': {
+      items: ['Snowflake', 'Spark', 'Hadoop (HDFS, Hive, MapReduce)', 'Kibana', 'Grafana', 'Prometheus'],
+      color: 'emerald',
+    },
+  }
+
+  const colorMap = {
+    blue: { bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-blue-300', hover: 'hover:border-blue-500/40' },
+    cyan: { bg: 'bg-cyan-500/10', border: 'border-cyan-500/20', text: 'text-cyan-300', hover: 'hover:border-cyan-500/40' },
+    purple: { bg: 'bg-purple-500/10', border: 'border-purple-500/20', text: 'text-purple-300', hover: 'hover:border-purple-500/40' },
+    emerald: { bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-300', hover: 'hover:border-emerald-500/40' },
+  }
+
   const techStack = [
-    'Java', 'Spring Boot', 'Python', 'Go', 'React', 'AWS',
-    'Kubernetes', 'Docker', 'Kafka', 'Spark', 'PostgreSQL', 'Redis',
+    'Java', 'Python', 'SQL', 'Scala', 'Kubernetes', 'AWS',
+    'Snowflake', 'Spark', 'Docker', 'Spring Boot', 'Kafka', 'PostgreSQL',
   ]
 
   return (
@@ -92,10 +149,12 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            {/* Status badge */}
-            <div className="flex items-center gap-2 mb-8">
-              <span className="w-2 h-2 bg-emerald-400 rounded-full pulse-dot"></span>
-              <span className="text-sm text-emerald-400 font-medium">Available for opportunities</span>
+            {/* $1M+ Savings highlight badge */}
+            <div className="flex items-center gap-3 mb-8">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
+                <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 pulse-dot"></span>
+                $1M+ Annual Cost Savings Delivered
+              </span>
             </div>
 
             {/* Name */}
@@ -107,21 +166,21 @@ export default function Home() {
 
             {/* Title */}
             <p className="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-4 max-w-2xl font-light">
-              Senior Software Engineer
+              Software Developer – Associate
             </p>
             <p className="text-base sm:text-lg text-slate-400 mb-10 max-w-2xl">
-              Distributed Systems &amp; Cloud Architecture @ <span className="text-white font-medium">Goldman Sachs</span> &middot; Dallas, TX
+              Distributed Systems &amp; Cloud-Native Architecture @ <span className="text-white font-medium">Goldman Sachs</span> &middot; Dallas, TX
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                to="/about"
+              <a
+                href="#experience"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-500 text-white font-medium text-base hover:bg-blue-600 transition-colors duration-200 shadow-lg shadow-blue-500/25"
               >
                 View My Work
                 <ArrowRightIcon className="w-4 h-4 ml-2" />
-              </Link>
+              </a>
               <a
                 href="/cv.pdf"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-slate-600 text-slate-300 font-medium text-base hover:border-slate-400 hover:text-white transition-all duration-200"
@@ -209,14 +268,14 @@ export default function Home() {
                 Selected Work
               </h2>
               <p className="text-slate-400 text-lg">
-                Projects demonstrating distributed systems expertise
+                Highlights from production systems and platform engineering
               </p>
             </div>
             <Link
               to="/research"
               className="inline-flex items-center text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
             >
-              View all projects
+              Research &amp; publications
               <ArrowRightIcon className="w-4 h-4 ml-1" />
             </Link>
           </motion.div>
@@ -266,7 +325,7 @@ export default function Home() {
       </section>
 
       {/* Experience Timeline */}
-      <section className="py-20 sm:py-24 border-t border-slate-800/50">
+      <section id="experience" className="py-20 sm:py-24 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -280,7 +339,7 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="max-w-3xl space-y-0">
+          <div className="max-w-4xl space-y-0">
             {experience.map((exp, index) => (
               <motion.div
                 key={index}
@@ -295,11 +354,18 @@ export default function Home() {
                   exp.current ? 'bg-blue-400 ring-4 ring-blue-400/20' : 'bg-slate-600'
                 }`} />
 
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 mb-3">
                   <div>
-                    <h3 className="text-lg font-bold text-white">
-                      {exp.role}
-                    </h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="text-lg font-bold text-white">
+                        {exp.role}
+                      </h3>
+                      {exp.current && (
+                        <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                          Current
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm text-slate-300 font-medium">
                       {exp.company} <span className="text-slate-500">&middot; {exp.division}</span>
                     </p>
@@ -308,25 +374,105 @@ export default function Home() {
                     {exp.period}
                   </span>
                 </div>
+
+                <ul className="space-y-1.5">
+                  {exp.achievements.map((item, i) => (
+                    <li key={i} className="flex items-start text-sm text-slate-400">
+                      <span className="mr-2 mt-1 text-blue-400">&#x2713;</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
+      {/* Skills */}
+      <section className="py-20 sm:py-24 border-t border-slate-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="mt-10"
+            transition={{ duration: 0.5 }}
+            className="mb-12"
           >
-            <Link
-              to="/about"
-              className="inline-flex items-center text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
-            >
-              View full experience
-              <ArrowRightIcon className="w-4 h-4 ml-1" />
-            </Link>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+              Technical Expertise
+            </h2>
           </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            {Object.entries(skills).map(([category, { items, color }], index) => {
+              const c = colorMap[color]
+              return (
+                <motion.div
+                  key={category}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className={`rounded-xl border ${c.border} ${c.bg} p-6 transition-all duration-300 ${c.hover}`}
+                >
+                  <h3 className={`text-sm font-semibold ${c.text} mb-4 uppercase tracking-wider`}>
+                    {category}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="skill-tag px-2.5 py-1 rounded-md text-xs font-mono text-slate-300 border border-slate-700/50 bg-slate-800/40"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="py-20 sm:py-24 border-t border-slate-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+              Education
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl">
+            {education.map((edu, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="gradient-border rounded-xl p-6"
+              >
+                <h3 className="text-lg font-bold text-white mb-1">
+                  {edu.degree}
+                </h3>
+                <p className="text-sm text-slate-300 font-medium mb-1">
+                  {edu.institution}
+                </p>
+                <p className="text-xs text-slate-500">
+                  {edu.location}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -16,7 +16,7 @@ export default function Footer() {
               Sajal Suhane
             </h3>
             <p className="text-sm text-slate-400">
-              Senior Software Engineer &middot; Distributed Systems &middot; Dallas, TX
+              Software Developer &middot; Distributed Systems &middot; Dallas, TX
             </p>
           </div>
 
