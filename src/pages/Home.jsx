@@ -149,11 +149,11 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            {/* AI initiatives highlight badge */}
+           {/* Leading AI Initiatives badge */}
             <div className="flex items-center gap-3 mb-8">
               <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 pulse-dot"></span>
-                Leading AI initiatives in CFOSS, Goldman Sachs
+                Leading AI Initiatives at CFOSS, Goldman Sachs
               </span>
             </div>
 
