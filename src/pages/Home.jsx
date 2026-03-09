@@ -143,70 +143,125 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="hero-gradient grid-bg min-h-[90vh] flex items-center relative overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
-           {/* Leading AI Initiatives badge */}
-            <div className="flex items-center gap-3 mb-8">
-              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
-                <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 pulse-dot"></span>
-                Leading AI Initiatives at CFOSS, Goldman Sachs
-              </span>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-            {/* Name */}
-            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white mb-6 leading-[0.95] tracking-tight">
-              Sajal
-              <br />
-              <span className="gradient-text">Suhane</span>
-            </h1>
-
-            {/* Title */}
-            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-4 max-w-2xl font-light">
-              Senior Software Engineer
-            </p>
-            <p className="text-base sm:text-lg text-slate-400 mb-10 max-w-2xl">
-              Distributed Systems &amp; Cloud-Native Architecture @ <span className="text-white font-medium">Goldman Sachs</span> &middot; Dallas, TX
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="#experience"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-500 text-white font-medium text-base hover:bg-blue-600 transition-colors duration-200 shadow-lg shadow-blue-500/25"
-              >
-                View My Work
-                <ArrowRightIcon className="w-4 h-4 ml-2" />
-              </a>
-              <a
-                href="/cv.pdf"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-slate-600 text-slate-300 font-medium text-base hover:border-slate-400 hover:text-white transition-all duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ArrowDownTrayIcon className="w-4 h-4 mr-2" />
-                Download Resume
-              </a>
-            </div>
-
-            {/* Tech stack ticker */}
-            <div className="mt-16 pt-8 border-t border-slate-800/50">
-              <p className="text-xs text-slate-500 uppercase tracking-wider mb-4">Tech I work with</p>
-              <div className="flex flex-wrap gap-2">
-                {techStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="skill-tag px-3 py-1.5 rounded-md text-xs font-mono text-slate-400 border border-slate-700/50 bg-slate-800/30"
-                  >
-                    {tech}
-                  </span>
-                ))}
+            {/* Left: Text content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+            >
+              {/* Leading AI Initiatives badge */}
+              <div className="flex items-center gap-3 mb-8">
+                <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
+                  <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 pulse-dot"></span>
+                  Leading AI Initiatives at CFOSS, Goldman Sachs
+                </span>
               </div>
-            </div>
-          </motion.div>
+
+              {/* Name */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.95] tracking-tight">
+                Sajal
+                <br />
+                <span className="gradient-text">Suhane</span>
+              </h1>
+
+              {/* Title */}
+              <p className="text-xl sm:text-2xl lg:text-2xl text-slate-300 mb-4 max-w-2xl font-light">
+                Senior Software Engineer
+              </p>
+              <p className="text-base sm:text-lg text-slate-400 mb-10 max-w-2xl">
+                Distributed Systems &amp; Cloud-Native Architecture @ <span className="text-white font-medium">Goldman Sachs</span> &middot; Dallas, TX
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#experience"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-500 text-white font-medium text-base hover:bg-blue-600 transition-colors duration-200 shadow-lg shadow-blue-500/25"
+                >
+                  View My Work
+                  <ArrowRightIcon className="w-4 h-4 ml-2" />
+                </a>
+                <a
+                  href="/cv.pdf"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-slate-600 text-slate-300 font-medium text-base hover:border-slate-400 hover:text-white transition-all duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ArrowDownTrayIcon className="w-4 h-4 mr-2" />
+                  Download Resume
+                </a>
+              </div>
+
+              {/* Tech stack ticker */}
+              <div className="mt-12 pt-8 border-t border-slate-800/50">
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-4">Tech I work with</p>
+                <div className="flex flex-wrap gap-2">
+                  {techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="skill-tag px-3 py-1.5 rounded-md text-xs font-mono text-slate-400 border border-slate-700/50 bg-slate-800/30"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right: Profile photo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+              className="flex justify-center lg:justify-end"
+            >
+              <div className="relative">
+                {/* Ambient glow behind photo */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/40 via-purple-500/25 to-cyan-500/40 blur-3xl scale-125 opacity-70" />
+
+                {/* Gradient ring */}
+                <div className="relative p-[3px] rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 shadow-2xl shadow-blue-500/20">
+                  <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-slate-900">
+                    <img
+                      src="/images/sajal_port.jpg"
+                      alt="Sajal Suhane"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+
+                {/* Floating badge – Goldman Sachs */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  className="absolute -bottom-2 -right-4 bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 shadow-xl"
+                >
+                  <p className="text-xs text-slate-500">Currently at</p>
+                  <p className="text-sm font-bold text-white">Goldman Sachs</p>
+                </motion.div>
+
+                {/* Floating badge – Open to connect */}
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="absolute -top-2 -left-6 bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 shadow-xl"
+                >
+                  <p className="text-xs text-slate-500">Based in</p>
+                  <p className="text-sm font-bold text-white">Dallas, TX</p>
+                </motion.div>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
