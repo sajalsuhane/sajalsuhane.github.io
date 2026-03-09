@@ -141,6 +141,68 @@ export default function Research() {
         </div>
       </section>
 
+      {/* Research Profiles */}
+      <section className="py-12 border-t border-slate-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <p className="text-xs text-slate-500 uppercase tracking-wider">Research Profiles</p>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.a
+              href="https://scholar.google.com/citations?hl=en&user=cma2gPQAAAAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="flex items-center gap-4 p-5 rounded-xl gradient-border glow-hover group"
+            >
+              <div className="w-11 h-11 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Citations & Publications</p>
+                <p className="text-white font-semibold">Google Scholar</p>
+                <p className="text-xs text-slate-400 truncate">scholar.google.com</p>
+              </div>
+              <ArrowTopRightOnSquareIcon className="w-4 h-4 text-slate-600 group-hover:text-blue-400 flex-shrink-0 transition-colors duration-200" />
+            </motion.a>
+
+            <motion.a
+              href="https://www.researchgate.net/scientific-contributions/Sajal-Suhane-2335180549"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.08 }}
+              className="flex items-center gap-4 p-5 rounded-xl gradient-border glow-hover group"
+            >
+              <div className="w-11 h-11 rounded-lg bg-teal-500/10 border border-teal-500/30 flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-teal-400" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53c.033.163.07.305.112.438.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.073.564.53 0 1.01-.094 1.44-.283a3.808 3.808 0 0 0 1.102-.756 3.745 3.745 0 0 0 .724-1.095c.166-.408.248-.84.248-1.296a3.422 3.422 0 0 0-.015-.34h-4.053a.5.5 0 0 0-.5.5v.84h2.536a2.122 2.122 0 0 1-.243.675 1.896 1.896 0 0 1-.516.566 2.18 2.18 0 0 1-.69.34 2.8 2.8 0 0 1-.82.112 2.44 2.44 0 0 1-1.048-.214 2.128 2.128 0 0 1-.757-.597 2.574 2.574 0 0 1-.453-.902 3.93 3.93 0 0 1-.15-1.12c0-.433.05-.822.15-1.166a2.52 2.52 0 0 1 .446-.882 2.02 2.02 0 0 1 .748-.568 2.45 2.45 0 0 1 1.055-.207c.357 0 .675.06.956.183.282.12.52.283.716.487l1.22-1.22A4.003 4.003 0 0 0 19.587 0zM0 4.5v15h15v-15H0zm13.5 13.5H1.5V6H13.5v12z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Research Network</p>
+                <p className="text-white font-semibold">ResearchGate</p>
+                <p className="text-xs text-slate-400 truncate">researchgate.net</p>
+              </div>
+              <ArrowTopRightOnSquareIcon className="w-4 h-4 text-slate-600 group-hover:text-teal-400 flex-shrink-0 transition-colors duration-200" />
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       {/* Publications */}
       <section className="py-20 sm:py-24 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
