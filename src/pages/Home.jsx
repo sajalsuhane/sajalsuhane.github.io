@@ -149,11 +149,11 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            {/* $1M+ Savings highlight badge */}
+            {/* AI initiatives highlight badge */}
             <div className="flex items-center gap-3 mb-8">
               <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 pulse-dot"></span>
-                $1M+ Annual Cost Savings Delivered
+                Leading AI initiatives in CFOSS, Goldman Sachs
               </span>
             </div>
 
@@ -166,7 +166,7 @@ export default function Home() {
 
             {/* Title */}
             <p className="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-4 max-w-2xl font-light">
-              Software Developer – Associate
+              Senior Software Engineer
             </p>
             <p className="text-base sm:text-lg text-slate-400 mb-10 max-w-2xl">
               Distributed Systems &amp; Cloud-Native Architecture @ <span className="text-white font-medium">Goldman Sachs</span> &middot; Dallas, TX
