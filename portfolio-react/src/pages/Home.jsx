@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Home() {
   const stats = [
-    { value: '$1M+', label: 'Annual Cost Savings', detail: 'Sybase IQ to cloud-native migration' },
+    { value: '$1M+', label: 'Annual Cost Savings', detail: 'Sybase IQ → Snowflake migration' },
     { value: '90%', label: 'Processing Time Reduction', detail: 'On-prem Spark → AWS Glue migration' },
     { value: '135%', label: 'Faster Ingestions', detail: 'Kubernetes-backed microservices' },
     { value: '650%', label: 'Faster Query Execution', detail: 'Spring Boot + Snowflake platform' },
@@ -12,9 +12,9 @@ export default function Home() {
 
   const projects = [
     {
-      title: 'Cloud-Native Platform Overhaul',
+      title: 'Sybase IQ → Snowflake Migration',
       company: 'Goldman Sachs – Associate',
-      description: 'Led transformation of legacy Sybase IQ operational store into cloud-native architecture using Kubernetes, Snowflake, and event-driven ingestion pipelines.',
+      description: 'Led transformation of legacy on-prem Sybase IQ operational store to cloud-native Snowflake architecture, demising legacy tech stack and eliminating on-prem storage dependencies.',
       impact: '$1M+ annual cost savings',
       tags: ['Kubernetes', 'Snowflake', 'Spring Boot', 'Contour HTTPProxy'],
       gradient: 'from-blue-500/10 to-cyan-500/10',
@@ -30,11 +30,11 @@ export default function Home() {
       border: 'border-purple-500/20 hover:border-purple-500/40',
     },
     {
-      title: 'Distributed Operational Store',
-      company: 'Goldman Sachs – Intern',
-      description: 'Engineered core components of a distributed operational store processing 3B+ events per second across Risk & Finance teams.',
-      impact: '31.7% efficiency improvement',
-      tags: ['Kafka', 'Kibana', 'Elasticsearch', 'Java'],
+      title: 'AI-Driven Optimization of Bio-Energy Systems',
+      company: 'Published Research',
+      description: 'AI-driven models for optimizing bio-energy systems, focusing on resource assessment and emission reduction. Published in Applied Chemical Engineering, 2025.',
+      impact: 'Peer-reviewed publication',
+      tags: ['AI/ML', 'Bio-Energy', 'Optimization', 'Emission Reduction'],
       gradient: 'from-amber-500/10 to-orange-500/10',
       border: 'border-amber-500/20 hover:border-amber-500/40',
     },
