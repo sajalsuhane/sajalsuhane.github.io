@@ -34,22 +34,17 @@ Inspired by **zachjordan.io**, this portfolio embraces a **brutalist-lite aesthe
 
 ```
 sajalsuhane.github.io/
-├── index.html              # Root HTML (built from portfolio-react)
-├── assets/                 # Built CSS/JS bundles
-├── cv.pdf                  # Resume
-├── favicon.ico
-├── backup/                 # Original HTML site backup
-├── portfolio-react/        # Source code
-│   ├── src/
-│   │   ├── components/     # Navbar, Footer
-│   │   ├── pages/          # Home, About, Research
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   ├── public/             # Static assets
-│   ├── package.json
-│   ├── vite.config.js
-│   └── tailwind.config.js
+├── index.html              # Vite entry point
+├── src/
+│   ├── components/         # Navbar, Footer
+│   ├── pages/              # Home, About, Research
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── public/                 # Static assets (cv.pdf, favicons)
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
 └── README.md
 ```
 
@@ -62,7 +57,6 @@ sajalsuhane.github.io/
 ### Setup
 
 ```bash
-cd portfolio-react
 npm install
 ```
 
@@ -73,48 +67,33 @@ npm run dev
 # Open http://localhost:5173
 ```
 
-### Build for Production
+### Build & Deploy to GitHub Pages
 
 ```bash
 npm run build
-# Output in portfolio-react/dist/
-```
-
-### Deploy to GitHub Pages
-
-```bash
-# 1. Build
-npm run build
-
-# 2. Copy to root
-cd ..
-rm -f *.html *.xml *.txt 2>/dev/null  # Clean old files
-cp -r portfolio-react/dist/* .         # Copy new build
-
-# 3. Commit and push
 git add -A
 git commit -m "chore: update portfolio"
 git push origin master
 ```
 
-**Note:** GitHub Pages serves from the root of the `master` branch. Vite builds to `dist/`, which we copy to the root.
+**Note:** GitHub Pages serves from the root of the `master` branch. Vite builds directly to the root (`assets/`, `index.html`).
 
 ## 📝 Content Updates
 
 ### Update Professional Summary
-Edit: `portfolio-react/src/pages/About.jsx`
+Edit: `src/pages/About.jsx`
 
 ### Update Projects
-Edit: `portfolio-react/src/pages/Research.jsx`
+Edit: `src/pages/Research.jsx`
 
 ### Update Hero/Homepage
-Edit: `portfolio-react/src/pages/Home.jsx`
+Edit: `src/pages/Home.jsx`
 
 ### Update Contact Links
-Edit: `portfolio-react/src/components/Footer.jsx` and `Navbar.jsx`
+Edit: `src/components/Footer.jsx` and `Navbar.jsx`
 
 ### Update CV
-Replace: `portfolio-react/public/cv.pdf`
+Replace: `public/cv.pdf`
 
 ## 🎨 Styling Guidelines
 
@@ -165,7 +144,6 @@ The site is hosted on **GitHub Pages** and deploys automatically when you push t
 ### Update Dependencies
 
 ```bash
-cd portfolio-react
 npm update
 npm audit fix
 ```
