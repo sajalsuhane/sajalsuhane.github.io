@@ -1,7 +1,6 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Home from './pages/Home';
-import About from './pages/About';
 import Research from './pages/Research';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -22,8 +21,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/research" element={<Research />} />
+          <Route path="/about" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
       </div>

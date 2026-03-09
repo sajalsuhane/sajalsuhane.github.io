@@ -4,100 +4,124 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 export default function Research() {
   const publications = [
     {
-      title: 'Real-time Predictive Analytics for Industrial Robots',
+      title: 'AI-Driven Optimization of Bio-Energy Systems: Models for Resource Assessment and Emission Reduction',
+      journal: 'Applied Chemical Engineering',
+      date: '2025',
+      volume: 'Volume 9, Issue 1',
+      authors: 'Rushali Rajaram Katkar, Sajal Suhane, Smita Suhane, S. Sugumaran, Santosh Bhauso Takale, Surekha Dehu Khetree, Shyamsing Thakur, Shital Yashwant Waware, Anant Sidhappa Kurhade',
+      description: 'Systematic study on AI-driven models for optimizing bio-energy systems, focusing on resource assessment and emission reduction strategies using machine learning techniques.',
+      tags: ['AI/ML', 'Bio-Energy', 'Optimization', 'Emission Reduction'],
+      url: 'https://ace.as-pub.com/index.php/ACE/article/view/5837',
+    },
+    {
+      title: 'Review of Explainable Machine Learning for Anaerobic Digestion',
+      journal: 'Bioresource Technology (ScienceDirect)',
+      date: '2022',
+      volume: 'Peer-reviewed Journal',
+      authors: 'Rushali Rajaram Katkar, Sajal Suhane, Smita Suhane, Anant Sidhappa Kurhade',
+      description: 'Comprehensive review of black-box ML approaches for anaerobic digestion modelling, focusing on interpretability metrics including Shapley values, partial dependence analysis, and permutation feature importance.',
+      tags: ['Explainable AI', 'Machine Learning', 'Anaerobic Digestion', 'Interpretability'],
+      url: 'https://www.sciencedirect.com/science/article/abs/pii/S0960852422018016',
+    },
+    {
+      title: 'Applications of Artificial Intelligence in Anaerobic Co-digestion: Recent Advances and Prospects',
+      journal: 'ResearchGate Publication',
+      date: '2022',
+      volume: 'Peer-reviewed',
+      authors: 'Rushali Rajaram Katkar, Sajal Suhane, Smita Suhane, Anant Sidhappa Kurhade',
+      description: 'Systematic review of AI techniques for biomass resource assessment, conversion-process optimization, and supply-chain planning and emission management in anaerobic co-digestion.',
+      tags: ['Artificial Intelligence', 'Biomass', 'Supply Chain', 'Process Optimization'],
+      url: 'https://www.researchgate.net/publication/366388643_Applications_of_artificial_intelligence_in_anaerobic_co-digestion_Recent_advances_and_prospects',
+    },
+    {
+      title: 'Robolution: Real Time Predictive Analytics for Industrial Robots',
       journal: 'International Journal of Engineering and Advanced Technology (IJEAT)',
       date: '2020',
       volume: 'Volume 9, Issue 3',
-      description: 'Published research on distributed predictive maintenance systems for industrial automation. Novel approach to distributed machine learning for real-time predictive analytics.',
-      impact: [
-        'Cited by researchers in industrial automation field',
-        'Distributed machine learning for IoT sensor networks',
-        'Real-time data pipelines for predictive maintenance',
-      ],
-      url: 'https://www.ijeat.org/wp-content/uploads/papers/v9i3/C5342029320.pdf',
+      authors: 'Sajal Suhane, Pramod D. Patil, Ravi Mishra, Simran Koul et al.',
+      description: 'Research on distributed predictive maintenance systems for industrial automation. Novel approach to distributed machine learning for real-time predictive analytics on IoT sensor networks.',
       tags: ['Machine Learning', 'Distributed Systems', 'IoT', 'Predictive Analytics'],
+      url: 'https://www.researchgate.net/publication/355701550_Robolution_Real_Time_Predictive_Analytics_for_Industrial_Robots',
     },
   ]
 
   const projects = [
     {
-      title: 'Cloud Migration Framework for Financial Systems',
-      company: 'Goldman Sachs - CFOSS Division',
-      period: '2021 - Present',
-      description: 'Led the design and implementation of a comprehensive cloud migration framework for legacy financial systems, transforming on-premises workflows into cloud-native, distributed architectures on AWS.',
-      challenge: 'Legacy financial workflows processing in 20+ minutes with limited scalability. Required migration to cloud while maintaining data integrity and regulatory compliance.',
+      title: 'Cloud-Native Platform Overhaul',
+      company: 'Goldman Sachs – Associate',
+      period: 'Dec 2024 – Present',
+      description: 'Led the transformation of a legacy Sybase IQ–based operational store into a cloud-native architecture, serving as Tech Lead for a 10-member team directing system design, roadmap planning, and cross-organizational stakeholder alignment.',
+      challenge: 'Legacy Sybase IQ operational store with on-prem storage dependencies, high costs, and slow query execution times.',
       solution: [
-        'Designed microservices architecture using Spring Boot and AWS services',
-        'Implemented distributed event-driven processing with Kafka',
-        'Created fault-tolerant data pipelines with AWS Lambda and Step Functions',
-        'Built comprehensive monitoring using CloudWatch and Prometheus',
+        'Architected scalable data platform using Kubernetes, Snowflake, Contour HTTPProxy, and event-driven ingestion pipelines',
+        'Designed new Spring Boot microservice (migrated from Dropwizard) retaining all API contracts',
+        'Seamlessly switched clients to Kubernetes-backed endpoints',
       ],
       impact: [
-        '90% reduction in processing time (20min → 2min)',
-        'Adopted as best practice within Goldman Sachs CFOSS division',
-        'Presented at internal technical conferences',
+        '$1M+ annual cost savings',
+        '135% faster ingestions',
+        '650% faster query execution',
+        'Eliminated on-prem storage dependencies',
       ],
-      technologies: ['AWS', 'Spring Boot', 'Kafka', 'Microservices', 'Lambda', 'CloudWatch'],
+      technologies: ['Kubernetes', 'Snowflake', 'Spring Boot', 'Contour HTTPProxy', 'Event-Driven'],
       color: 'blue',
     },
     {
-      title: 'Distributed AIOps Platform Enhancement',
-      company: 'Tata Consultancy Services - Digitate',
-      period: '2017 - 2019',
-      description: 'Enhanced the ignio AIOps platform with distributed intelligence and autonomous remediation capabilities, serving Fortune 500 clients globally.',
-      challenge: 'Manual IT operations resolution taking thousands of hours per month across 100+ global clients. Needed intelligent automation to reduce MTTR.',
+      title: 'AWS Glue Migration Framework',
+      company: 'Goldman Sachs – Analyst',
+      period: 'Jun 2023 – Dec 2024',
+      description: 'Developed a reusable migration framework enabling teams to move on-prem Spark workflows to AWS Glue with minimal changes. Also mentored an intern and co-built an AI-powered knowledge chatbot.',
+      challenge: 'On-prem Spark workflows processing in 20+ minutes with high infrastructure costs. Support tickets taking 5 hours to resolve due to scattered documentation.',
       solution: [
-        'Developed distributed algorithms for anomaly detection',
-        'Implemented autonomous remediation workflows',
-        'Created predictive models for incident prevention',
-        'Built scalable architecture for multi-tenant operations',
+        'Built reusable Spark → AWS Glue migration framework with minimal code changes',
+        'Co-built AI-powered knowledge chatbot indexing nested Confluence spaces',
+        'Built S3-backed intermediate computation system for Market Risk',
       ],
       impact: [
-        'Reduced MTTR by 7,000 hours/month across 100+ clients',
-        'Saved 9,000+ human hours/year worldwide',
-        'Patent-pending technology in AI-powered operations',
+        '$230K annual savings per workflow',
+        '90% reduction in processing time (20min → 2min)',
+        'Support ticket resolution: 5 hours → 1 hour',
+        '25% workflow efficiency improvement for Market Risk',
       ],
-      technologies: ['AIOps', 'Machine Learning', 'Python', 'Automation', 'Distributed Systems'],
+      technologies: ['AWS Glue', 'Spark', 'S3', 'DynamoDB', 'Python', 'AI/NLP'],
       color: 'purple',
     },
     {
-      title: 'Distributed Queuing System with Observability',
-      company: 'Goldman Sachs - Controllers Division',
-      period: '2020 - 2021',
-      description: 'Designed and implemented a proof-of-concept distributed queuing system with comprehensive observability dashboards for operational storage workflows.',
-      challenge: 'Existing operational storage tools handling billions of data points per second lacked visibility and efficient queue management.',
+      title: 'Distributed Operational Store',
+      company: 'Goldman Sachs – Intern',
+      period: 'Jun 2022 – Aug 2022',
+      description: 'Engineered core components of a distributed operational store processing 3B+ events per second across Risk & Finance teams.',
+      challenge: 'Operational store handling billions of data points per second lacked observability and had ingestion timeout issues.',
       solution: [
-        'Built distributed queuing system using Kafka',
-        'Created real-time Kibana dashboards for monitoring',
-        'Implemented distributed tracing with OpenTelemetry',
-        'Designed data retention and archival strategies',
+        'Engineered core distributed store components for Risk & Finance',
+        'Designed Kibana dashboards using live API metrics',
+        'Built queuing-based ingestion POC eliminating timeouts',
       ],
       impact: [
-        '31.7% efficiency improvement in data processing',
-        'Real-time visibility into operational workflows',
-        'Scalable architecture for future growth',
+        '31.7% efficiency improvement',
+        '30% reduction in ingestion time',
+        'Enhanced observability across Risk & Finance',
       ],
-      technologies: ['Kafka', 'Kibana', 'Elasticsearch', 'OpenTelemetry', 'Java'],
+      technologies: ['Kafka', 'Kibana', 'Elasticsearch', 'Java', 'Distributed Systems'],
       color: 'cyan',
     },
     {
-      title: 'Biomedical Sensor Data Processing Platform',
+      title: 'Biomedical Sensor Data Platform',
       company: 'University of Texas at Dallas',
-      period: '2019 - 2020',
-      description: 'Developed distributed algorithms and scalable databases for processing biomedical sensor data from IoT networks in real-time.',
-      challenge: 'Processing large volumes of biomedical sensor data requiring 0.6 FTE of manual effort. Needed automated, real-time processing pipeline.',
+      period: 'Nov 2021 – May 2023',
+      description: 'Developed automated algorithms for cleaning and analyzing high-frequency biomedical sensor data, designed cross-platform applications for real-time sensor analytics, and optimized databases for wearable device data.',
+      challenge: 'Processing large volumes of biomedical sensor data requiring 0.6 FTE of manual effort. Millions of readings per minute from wearable devices needed efficient storage and real-time analytics.',
       solution: [
-        'Designed scalable time-series databases',
-        'Implemented real-time data pipelines using Apache Spark',
-        'Created distributed analytics workflows',
-        'Built APIs for data access and visualization',
+        'Developed automated algorithm for cleaning high-frequency biomedical sensor data',
+        'Designed cross-platform applications for real-time sensor analytics',
+        'Optimized databases to manage millions of readings per minute',
       ],
       impact: [
-        'Reduced human effort by 0.6 FTE through automation',
-        'Real-time processing of biomedical sensor data',
-        'Foundation for published research',
+        'Reduced manual effort by 0.6 FTE',
+        '70% operational efficiency improvement',
+        'Real-time processing of wearable device data',
       ],
-      technologies: ['Apache Spark', 'Time-series DB', 'Python', 'IoT', 'Real-time Processing'],
+      technologies: ['Python', 'Real-time Processing', 'Cross-platform', 'Database Optimization'],
       color: 'emerald',
     },
   ]
@@ -131,7 +155,7 @@ export default function Research() {
               <span className="gradient-text">Projects</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
-              Published research, production systems, and technical contributions in distributed systems and cloud architecture.
+              Published research in AI/ML and bio-energy systems, plus production engineering work in distributed systems and cloud architecture.
             </p>
           </motion.div>
         </div>
@@ -150,66 +174,59 @@ export default function Research() {
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               Publications
             </h2>
-            <p className="text-slate-400">Peer-reviewed research contributions</p>
+            <p className="text-slate-400">Peer-reviewed research contributions ({publications.length} papers)</p>
           </motion.div>
 
-          {publications.map((pub, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className="gradient-border rounded-xl p-6 sm:p-8 glow-hover"
-            >
-              <h3 className="text-xl font-bold text-white mb-3">
-                {pub.title}
-              </h3>
-              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-400 mb-4">
-                <span>{pub.journal}</span>
-                <span className="hidden sm:inline">&middot;</span>
-                <span>{pub.date}</span>
-                <span className="hidden sm:inline">&middot;</span>
-                <span>{pub.volume}</span>
-              </div>
-              <p className="text-sm text-slate-300 leading-relaxed mb-5">
-                {pub.description}
-              </p>
-
-              <div className="mb-5">
-                <p className="text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Impact</p>
-                <ul className="space-y-1.5">
-                  {pub.impact.map((item, i) => (
-                    <li key={i} className="flex items-start text-sm text-slate-400">
-                      <span className="mr-2 mt-1 text-blue-400">&#x2022;</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="flex flex-wrap gap-1.5 mb-5">
-                {pub.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2.5 py-1 rounded-md text-xs font-mono text-slate-400 bg-slate-800/50 border border-slate-700/50"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href={pub.url}
-                className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-medium hover:bg-blue-500/20 transition-all duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
+          <div className="space-y-6">
+            {publications.map((pub, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="gradient-border rounded-xl p-6 sm:p-8 glow-hover"
               >
-                Read Paper
-                <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-1.5" />
-              </a>
-            </motion.div>
-          ))}
+                <h3 className="text-xl font-bold text-white mb-3">
+                  {pub.title}
+                </h3>
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-400 mb-3">
+                  <span>{pub.journal}</span>
+                  <span className="hidden sm:inline">&middot;</span>
+                  <span>{pub.date}</span>
+                  <span className="hidden sm:inline">&middot;</span>
+                  <span>{pub.volume}</span>
+                </div>
+                <p className="text-xs text-slate-500 mb-4">
+                  <span className="font-medium text-slate-400">Authors:</span> {pub.authors}
+                </p>
+                <p className="text-sm text-slate-300 leading-relaxed mb-5">
+                  {pub.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {pub.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 rounded-md text-xs font-mono text-slate-400 bg-slate-800/50 border border-slate-700/50"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={pub.url}
+                  className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-medium hover:bg-blue-500/20 transition-all duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Read Paper
+                  <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-1.5" />
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -226,7 +243,7 @@ export default function Research() {
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               Major Projects
             </h2>
-            <p className="text-slate-400">Production systems and proof-of-concept implementations</p>
+            <p className="text-slate-400">Production systems and engineering contributions</p>
           </motion.div>
 
           <div className="space-y-6">
