@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import { useEffect } from 'react';
 import Home from './pages/Home';
 import Research from './pages/Research';
+import Calculators from './pages/Calculators';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/research" element={<Research />} />
+          <Route path="/calculators" element={<Calculators />} />
           <Route path="/about" element={<Navigate to="/" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

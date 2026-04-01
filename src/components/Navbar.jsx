@@ -21,6 +21,7 @@ export default function Navbar() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Research & Projects', href: '/research' },
+    { name: 'Calculators', href: '/calculators' },
   ]
 
   const isActive = (path) => location.pathname === path
