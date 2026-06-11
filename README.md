@@ -133,6 +133,55 @@ The site is hosted on **GitHub Pages** and deploys automatically when you push t
 
 **Live URL:** https://sajalsuhane.github.io
 
+## 🔍 SEO & Analytics
+
+### GoatCounter (analytics)
+
+The site loads [GoatCounter](https://www.goatcounter.com) from `src/entry.html`
+with site code **`sajalsuhane`** (`https://sajalsuhane.goatcounter.com/count`).
+
+- **One-time setup:** the site code `sajalsuhane` must be registered at
+  [goatcounter.com](https://www.goatcounter.com/signup) before any pageviews are
+  counted. Until then the script loads but counts nothing.
+- **Custom events tracked:** `resume-download` (resume CTA click) and
+  `email-copy` (copy-email button). They appear in the GoatCounter dashboard
+  alongside pageviews.
+
+### Google Search Console
+
+After each deploy of SEO-relevant changes (and once initially):
+
+1. Verify the property `https://sajalsuhane.github.io/` in
+   [Google Search Console](https://search.google.com/search-console)
+   (HTML-tag or DNS verification).
+2. Submit `https://sajalsuhane.github.io/sitemap.xml` under **Sitemaps**.
+3. Use **URL Inspection → Request Indexing** for `/` and `/research` to speed
+   up recrawl.
+
+`public/robots.txt` allows all crawlers and points at the sitemap.
+
+### og.png (link preview card)
+
+- Lives at `public/images/og.png` (served as
+  `https://sajalsuhane.github.io/images/og.png`), referenced by `og:image` and
+  `twitter:image` in `src/entry.html`. Must stay **1200×630**.
+- The editable source is `public/images/og-source.svg`. Generate the PNG from it:
+
+  ```bash
+  cd public/images
+  qlmanage -t -s 1200 -o . og-source.svg && mv og-source.svg.png og.png
+  # or: rsvg-convert -w 1200 -h 630 og-source.svg -o og.png
+  sips -g pixelWidth -g pixelHeight og.png   # must report 1200 x 630
+  ```
+
+- **When the title/role changes**, edit the text lines in `og-source.svg` and
+  regenerate so the preview matches: keep the dark slate (#020617) background
+  and blue (#3b82f6) accent, then verify dimensions as above.
+- After changing it, re-scrape with the
+  [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and
+  [OpenGraph.xyz](https://www.opengraph.xyz/) — social platforms cache og images
+  aggressively.
+
 ## 📊 Performance
 
 - **Bundle Size:** ~390KB JS, ~3KB CSS (gzipped: ~120KB)
