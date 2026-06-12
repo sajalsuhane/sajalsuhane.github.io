@@ -3,6 +3,29 @@
 All notable changes to sajalsuhane.github.io. Versions use the 4-digit
 `MAJOR.MINOR.PATCH.MICRO` format.
 
+## [1.0.1.0] - 2026-06-12
+
+Design polish from the live-site design review: the site keeps its quiet,
+senior tone but gains a signature.
+
+### Changed
+
+- **The name is now the hero.** "Sajal Suhane" renders in Space Grotesk at up
+  to 128px — a real typographic anchor instead of a heading floating in dark
+  space. Space Grotesk also carries section headings and the impact numerals;
+  Inter stays for body text.
+- **Impact stats read as an editorial strip** — borderless numerals with
+  hairline rules instead of four boxed cards.
+- **Sections alternate surface tones**, giving the page scroll rhythm instead
+  of one undifferentiated dark column.
+- **Section headings rise subtly as you scroll** (transform-only, so content
+  stays visible in print, screenshots, and search-engine renders; respects
+  reduced-motion).
+
+### Fixed
+
+- Desktop nav links now meet the 44px touch-target floor.
+
 ## [1.0.0.0] - 2026-06-11
 
 Portfolio refresh: the site now ranks properly for name searches, unfurls as a

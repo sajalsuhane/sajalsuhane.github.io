@@ -82,7 +82,7 @@ export default function Home() {
       {/* 1. Hero */}
       <section className="hero-gradient grid-bg min-h-[90vh] flex items-center relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center">
 
             {/* Left: text content */}
             <div className="hero-enter">
@@ -93,7 +93,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.95] tracking-tight">
+              <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-6 leading-[0.9] tracking-tight">
                 Sajal
                 <br />
                 Suhane
@@ -181,10 +181,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Impact */}
-      <section className="py-20 sm:py-24 border-t border-slate-800/50">
+      {/* 2. Impact — borderless numeral strip, reads as the hero's bottom edge */}
+      <section className="section-alt py-16 sm:py-20 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
+          <div className="mb-10 reveal">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
               Impact &amp; Results
             </h2>
@@ -193,16 +193,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
             {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="p-6 rounded-xl border border-slate-800 bg-slate-900/50 transition-colors duration-200 hover:border-blue-500/40"
-              >
-                <div className="text-3xl sm:text-4xl font-black text-white mb-2">
+              <div key={stat.label} className="border-l border-slate-700/60 pl-5">
+                <div className="text-4xl sm:text-5xl font-bold text-white mb-2 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
                   {stat.value}
                 </div>
-                <div className="text-sm font-semibold text-white mb-1">
+                <div className="text-sm font-semibold text-slate-200 mb-1">
                   {stat.label}
                 </div>
                 <div className="text-xs text-slate-400">
@@ -217,7 +214,7 @@ export default function Home() {
       {/* 3. Experience — the page spine */}
       <section id="experience" className="py-20 sm:py-24 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4 reveal">
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Experience
             </h2>
@@ -294,9 +291,9 @@ export default function Home() {
       </section>
 
       {/* 4. Skills */}
-      <section className="py-20 sm:py-24 border-t border-slate-800/50">
+      <section className="section-alt py-20 sm:py-24 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 reveal">
             Technical Expertise
           </h2>
 

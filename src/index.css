@@ -16,6 +16,14 @@
     --color-surface: #0f172a;
     --color-surface-light: #1e293b;
     --color-surface-lighter: #334155;
+    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  }
+
+  /* Display face for the two heading tiers only; Inter stays for body.
+     Space Grotesk tops out at 700, so font-black headings resolve via
+     font-synthesis: none to the real 700 cut. */
+  h1, h2 {
+    font-family: var(--font-display);
   }
 
   body {
@@ -115,6 +123,33 @@
 
 .hero-enter-delayed {
   animation: hero-rise 0.6s ease-out 0.15s both;
+}
+
+/* Alternating section surface — creates scroll rhythm between sections.
+   A shade above the page base, below card surfaces. */
+.section-alt {
+  background: rgba(15, 23, 42, 0.45);
+}
+
+/* One scroll-linked motion (landing rule): section headings rise as they
+   enter the viewport. Transform-only — opacity never changes, so content
+   stays visible in print, full-page screenshots, and crawler renders even
+   when the scroll timeline hasn't progressed. No JS, no observer. */
+@keyframes reveal-rise {
+  from {
+    transform: translateY(16px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal-rise 0.5s ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
