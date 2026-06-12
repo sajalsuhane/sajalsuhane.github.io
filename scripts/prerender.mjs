@@ -53,6 +53,10 @@ function escapeAttr(value) {
   return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;')
 }
 
+function escapeText(value) {
+  return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
+}
+
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
@@ -71,7 +75,7 @@ function injectRoot(html, appHtml) {
 function setTitle(html, title) {
   const titleRe = /<title>[\s\S]*?<\/title>/
   if (!titleRe.test(html)) fail('Could not find <title> in the template.')
-  return html.replace(titleRe, () => `<title>${title}</title>`)
+  return html.replace(titleRe, () => `<title>${escapeText(title)}</title>`)
 }
 
 /**
