@@ -1,1 +1,0 @@
-/Users/sajal/my-projects/sajalsuhane.github.io/.claude/skills/gstack/sync-gbrain/SKILL.md

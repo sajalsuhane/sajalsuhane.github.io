@@ -1,1 +1,0 @@
-/Users/sajal/my-projects/sajalsuhane.github.io/.claude/skills/gstack/pair-agent/SKILL.md
