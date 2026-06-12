@@ -42,16 +42,25 @@ describe('CopyEmailButton', () => {
   })
 
   it('reverts to the idle label after 2 seconds', async () => {
-    stubClipboard(vi.fn().mockResolvedValue())
+    // Fake timers BEFORE the click so the revert timeout is scheduled on the
+    // fake clock — deterministic and instant, no 2s wall-clock sleep per run.
+    vi.useFakeTimers()
+    try {
+      stubClipboard(vi.fn().mockResolvedValue())
 
-    render(<CopyEmailButton />)
-    await act(async () => {
-      fireEvent.click(screen.getByRole('button'))
-    })
-    expect(screen.getByText('Copied ✓')).toBeInTheDocument()
+      render(<CopyEmailButton />)
+      await act(async () => {
+        fireEvent.click(screen.getByRole('button'))
+      })
+      expect(screen.getByText('Copied ✓')).toBeInTheDocument()
 
-    await act(() => new Promise((r) => setTimeout(r, 2100)))
-    expect(screen.getByText('Copy email')).toBeInTheDocument()
+      act(() => {
+        vi.advanceTimersByTime(2000)
+      })
+      expect(screen.getByText('Copy email')).toBeInTheDocument()
+    } finally {
+      vi.useRealTimers()
+    }
   })
 
   it('survives clipboard failure without crashing (mailto fallback path)', async () => {

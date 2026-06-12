@@ -2,12 +2,7 @@ import { useEffect, useState } from 'react'
 import { ArrowDownTrayIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router'
 import CopyEmailButton from '../components/CopyEmailButton'
-
-const EMAIL = 'ssuhane31@gmail.com'
-
-const trackResumeDownload = () => {
-  window.goatcounter?.count?.({ path: 'resume-download', event: true })
-}
+import { EMAIL, ROUTE_META, trackResumeDownload } from '../lib/site'
 
 const stats = [
   { value: '$1M+', label: 'Annual Cost Savings', detail: 'Sybase IQ → Snowflake migration' },
@@ -79,7 +74,7 @@ export default function Home() {
   const [photoFailed, setPhotoFailed] = useState(false)
 
   useEffect(() => {
-    document.title = 'Sajal Suhane — Software Engineer at Goldman Sachs'
+    document.title = ROUTE_META.home.title
   }, [])
 
   return (
@@ -93,7 +88,7 @@ export default function Home() {
             <div className="hero-enter">
               <div className="flex items-center gap-3 mb-8">
                 <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold">
-                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 pulse-dot"></span>
+                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
                   Tech Lead &middot; 10-member team &middot; Dallas, TX
                 </span>
               </div>
@@ -104,7 +99,7 @@ export default function Home() {
                 Suhane
               </h1>
 
-              <p className="text-xl sm:text-2xl text-slate-300 mb-4 max-w-2xl font-light">
+              <p className="text-xl sm:text-2xl text-slate-300 mb-4 max-w-2xl font-normal">
                 Software Engineer at Goldman Sachs
               </p>
               <p className="text-base sm:text-lg text-slate-400 mb-10 max-w-2xl">

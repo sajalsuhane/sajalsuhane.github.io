@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-
-const EMAIL = 'ssuhane31@gmail.com'
+import { EMAIL, trackEmailCopy } from '../lib/site'
 
 export default function CopyEmailButton() {
   const [copied, setCopied] = useState(false)
@@ -11,7 +10,7 @@ export default function CopyEmailButton() {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(EMAIL)
-      window.goatcounter?.count?.({ path: 'email-copy', event: true })
+      trackEmailCopy()
       setCopied(true)
       clearTimeout(timeoutRef.current)
       timeoutRef.current = setTimeout(() => setCopied(false), 2000)
@@ -25,7 +24,7 @@ export default function CopyEmailButton() {
     <button
       type="button"
       onClick={handleCopy}
-      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-700 px-4 text-sm font-medium text-slate-300 transition-colors duration-200 hover:border-blue-500 hover:text-white"
+      className="inline-flex min-h-11 min-w-[7.5rem] items-center justify-center rounded-lg border border-slate-700 px-4 text-sm font-medium text-slate-300 transition-colors duration-200 hover:border-blue-500 hover:text-white"
       aria-label={`Copy email address ${EMAIL}`}
     >
       <span aria-live="polite">{copied ? 'Copied ✓' : 'Copy email'}</span>

@@ -41,6 +41,7 @@ jobs:
         run: |
           grep -q "Sajal Suhane" dist/index.html || { echo "dist/index.html missing prerendered content"; exit 1; }
           test -f dist/research/index.html || { echo "missing dist/research/index.html"; exit 1; }
+          grep -q "<title>Research &amp; Publications" dist/research/index.html || { echo "research page missing its own title — per-route head rewrite broken"; exit 1; }
           test -f dist/robots.txt || { echo "missing dist/robots.txt"; exit 1; }
           test -f dist/sitemap.xml || { echo "missing dist/sitemap.xml"; exit 1; }
 

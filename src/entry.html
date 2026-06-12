@@ -77,10 +77,14 @@
       }
     </style>
 
-    <!-- Inter Font -->
+    <!-- Inter Font — loaded async (media=print swap) so first paint doesn't
+         block on the cross-origin CSS; system fallback renders immediately -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    </noscript>
   </head>
   <body>
     <!-- GitHub Pages SPA redirect handler -->
@@ -98,6 +102,6 @@
     </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script data-goatcounter="https://sajalsuhane.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://sajalsuhane.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   </body>
 </html>

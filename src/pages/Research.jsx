@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+import { ROUTE_META } from '../lib/site'
 
 export default function Research() {
   useEffect(() => {
-    document.title = 'Research & Publications — Sajal Suhane'
+    document.title = ROUTE_META.research.title
   }, [])
 
   const publications = [
@@ -288,7 +289,7 @@ export default function Research() {
                       {project.impact.map((item) => (
                         <li key={item} className="flex items-start text-sm">
                           <span className="mr-2 mt-0.5 text-blue-400" aria-hidden="true">&#x2713;</span>
-                          <span className="font-medium text-blue-400">{item}</span>
+                          <span className="font-medium text-slate-200">{item}</span>
                         </li>
                       ))}
                     </ul>

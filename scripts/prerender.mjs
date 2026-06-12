@@ -155,13 +155,10 @@ writePage(path.join(root, 'dist', 'index.html'), injectRoot(template, homeHtml))
 // Route: /research
 // ---------------------------------------------------------------------------
 
-const RESEARCH = {
-  url: 'https://sajalsuhane.github.io/research/',
-  title: 'Research & Publications — Sajal Suhane',
-  description:
-    'Published research by Sajal Suhane spanning AI/machine learning and ' +
-    'bio-energy systems — peer-reviewed publications with links to full papers.',
-}
+const { ROUTE_META } = await import(
+  pathToFileURL(path.join(root, 'src', 'lib', 'site.js')).href
+)
+const RESEARCH = ROUTE_META.research
 
 const researchHtml = render('/research')
 if (!researchHtml || researchHtml.length < 100) {

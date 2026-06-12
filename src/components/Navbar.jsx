@@ -1,10 +1,7 @@
 import { Link, useLocation } from 'react-router'
 import { useState, useEffect } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-
-const trackResumeDownload = () => {
-  window.goatcounter?.count?.({ path: 'resume-download', event: true })
-}
+import { trackResumeDownload } from '../lib/site'
 
 export default function Navbar() {
   const location = useLocation()
@@ -63,7 +60,7 @@ export default function Navbar() {
             <a
               href="/cv.pdf"
               onClick={trackResumeDownload}
-              className="ml-3 px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-medium hover:bg-blue-500/20 hover:border-blue-500/50 transition-colors duration-200"
+              className="ml-3 inline-flex min-h-11 items-center px-4 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-medium hover:bg-blue-500/20 hover:border-blue-500/50 transition-colors duration-200"
               target="_blank"
               rel="noopener noreferrer"
             >

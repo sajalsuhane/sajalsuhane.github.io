@@ -1,5 +1,9 @@
 # Plan: Portfolio Refresh — Recruiter Conversion + Search Ranking
 
+> **Status: IMPLEMENTED** on branch `portfolio-refresh` (2026-06-11). This file is
+> a historical record of the design decisions; file:line references describe the
+> pre-refresh codebase and no longer resolve.
+
 ## Goal
 
 Update sajalsuhane.github.io so that (1) a recruiter who lands on it converts —
