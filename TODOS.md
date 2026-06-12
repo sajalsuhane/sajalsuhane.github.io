@@ -16,16 +16,22 @@
 
 ## Tooling
 
-### Enable gstack visual mockups
+### Configure OpenAI API key for gstack design mockups
 
-**What:** Install bun (`curl -fsSL https://bun.sh/install`), run `./setup` in `.claude/skills/gstack/`, and configure an OpenAI API key.
+**What:** Add an OpenAI API key so the gstack design binary can generate visual mockups for /design-shotgun and /design-review.
 
-**Why:** The 2026-06-10 design review ran text-only; the design binary generates real visual mockups for /design-shotgun and /design-review. Bun absence also breaks gstack helper scripts (e.g. gstack-review-log validates JSON via bun).
+**Why:** Browse (screenshots) now works; mockup generation is the last missing gstack capability.
 
-**Context:** The vendored gstack was upgraded to v1.57.9.0 but its compiled binaries (browse, design) could not be built without bun. The uncommitted upgrade in `.claude/skills/gstack/` should be committed on its own branch alongside this setup (consider migrating to team mode at the same time — vendoring is deprecated).
+**Context:** bun was installed and gstack binaries built during the 2026-06-12 design review (the rest of the original TODO). Only the API key remains.
 
 **Effort:** S
-**Priority:** P3
+**Priority:** P4
 **Depends on:** OpenAI account
 
 ## Completed
+
+### Enable gstack visual mockups (bun + browse build)
+
+**What:** Install bun, build gstack browse/design binaries, commit the v1.57.9.0 vendored upgrade.
+
+**Completed:** v1.0.1.0 (2026-06-12) — bun 1.3.14 installed, browse binary built and used for the live design audit, gstack upgrade merged to master. Remaining OpenAI-key portion split into its own TODO above.
