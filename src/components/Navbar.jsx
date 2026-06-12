@@ -48,7 +48,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                className={`inline-flex min-h-11 items-center px-4 rounded-lg text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
                     ? 'bg-blue-500/10 text-blue-400'
                     : 'text-slate-300 hover:text-white hover:bg-white/5'
