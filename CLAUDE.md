@@ -4,17 +4,33 @@
 
 - React 19 + Vite 7
 - Tailwind CSS 4
-- React Router 7
-- Framer Motion 12
+- React Router 7 (import from `react-router`, not `react-router-dom`)
 
 ## Commands
 
 ```bash
 npm run dev      # start dev server (opens src/entry.html)
-npm run build    # build + copy dist files to repo root
+npm run build    # build + prerender + copy dist files to repo root
+npm test         # vitest suite (prerender smoke, components, routes)
 npm run lint     # eslint
 npm run preview  # preview built site
 ```
+
+## Deployment
+
+GitHub Pages serves the **master branch root** (legacy mode). `npm run build`
+prerenders `/` and `/research` to static HTML and copies everything to the repo
+root — committing those artifacts IS the deploy. The GitHub Action only verifies
+the build; it does not publish.
+
+## Testing
+
+See TESTING.md. Run `npm test` before every commit.
+
+- 100% test coverage is the goal — tests make vibe coding safe
+- New function → corresponding test; bug fix → regression test
+- New conditional → tests for BOTH paths; new error handling → test that triggers it
+- Never commit code that makes existing tests fail
 
 ## gstack
 

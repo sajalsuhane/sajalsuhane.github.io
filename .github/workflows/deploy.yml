@@ -1,16 +1,21 @@
-# Deploy React portfolio to GitHub Pages from master branch
-name: Deploy to GitHub Pages
+# Verify the site builds and the prerendered output is intact.
+# GitHub Pages serves the master branch root (legacy mode), so the deployed
+# site is the build output committed at the repo root by `npm run build`.
+name: Build check
 
 on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,14 +31,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Test
+        run: npm test
+
+      - name: Build (client + prerender)
         run: npm run build
 
-      - name: Prepare dist index.html
-        run: cp dist/src/entry.html dist/index.html
+      - name: Verify prerendered output
+        run: |
+          grep -q "Sajal Suhane" dist/index.html || { echo "dist/index.html missing prerendered content"; exit 1; }
+          test -f dist/research/index.html || { echo "missing dist/research/index.html"; exit 1; }
+          grep -q "<title>Research &amp; Publications" dist/research/index.html || { echo "research page missing its own title — per-route head rewrite broken"; exit 1; }
+          test -f dist/robots.txt || { echo "missing dist/robots.txt"; exit 1; }
+          test -f dist/sitemap.xml || { echo "missing dist/sitemap.xml"; exit 1; }
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+      - name: Lint
+        run: npm run lint
