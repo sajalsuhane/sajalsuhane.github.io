@@ -1,3 +1,8 @@
 node_modules
 dist
 dist-ssr
+
+# gstack vendored tooling — build artifacts stay local
+.claude/skills/gstack/**/dist/
+.claude/skills/gstack/**/node_modules/
+.claude/skills/gstack/bun.lock
