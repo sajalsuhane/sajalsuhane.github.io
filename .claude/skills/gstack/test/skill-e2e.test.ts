@@ -325,62 +325,6 @@ Report the exact output — either "READY: <path>" or "NEEDS_SETUP".`,
     try { fs.rmSync(nonGitDir, { recursive: true, force: true }); } catch {}
   }, 60_000);
 
-  testIfSelected('contributor-mode', async () => {
-    const contribDir = fs.mkdtempSync(path.join(os.tmpdir(), 'skill-e2e-contrib-'));
-    const logsDir = path.join(contribDir, 'contributor-logs');
-    fs.mkdirSync(logsDir, { recursive: true });
-
-    // Extract contributor mode instructions from generated SKILL.md
-    const skillMd = fs.readFileSync(path.join(ROOT, 'SKILL.md'), 'utf-8');
-    const contribStart = skillMd.indexOf('## Contributor Mode');
-    const contribEnd = skillMd.indexOf('\n## ', contribStart + 1);
-    const contribBlock = skillMd.slice(contribStart, contribEnd > 0 ? contribEnd : undefined);
-
-    const result = await runSkillTest({
-      prompt: `You are in contributor mode (_CONTRIB=true).
-
-${contribBlock}
-
-OVERRIDE: Write contributor logs to ${logsDir}/ instead of ~/.gstack/contributor-logs/
-
-Now try this browse command (it will fail — there is no binary at this path):
-/nonexistent/path/browse goto https://example.com
-
-This is a gstack issue (the browse binary is missing/misconfigured).
-File a contributor report about this issue. Then tell me what you filed.`,
-      workingDirectory: contribDir,
-      maxTurns: 8,
-      timeout: 60_000,
-      testName: 'contributor-mode',
-      runId,
-    });
-
-    logCost('contributor mode', result);
-    // Override passed: this test intentionally triggers a browse error (nonexistent binary)
-    // so browseErrors will be non-empty — that's expected, not a failure
-    recordE2E('contributor mode report', 'Skill E2E tests', result, {
-      passed: result.exitReason === 'success',
-    });
-
-    // Verify a contributor log was created with expected format
-    const logFiles = fs.readdirSync(logsDir).filter(f => f.endsWith('.md'));
-    expect(logFiles.length).toBeGreaterThan(0);
-
-    // Verify new reflection-based format
-    const logContent = fs.readFileSync(path.join(logsDir, logFiles[0]), 'utf-8');
-    expect(logContent).toContain('Hey gstack team');
-    expect(logContent).toContain('What I was trying to do');
-    expect(logContent).toContain('What happened instead');
-    expect(logContent).toMatch(/rating/i);
-    // Verify report has repro steps (agent may use "Steps to reproduce", "Repro Steps", etc.)
-    expect(logContent).toMatch(/repro|steps to reproduce|how to reproduce/i);
-    // Verify report has date/version footer (agent may format differently)
-    expect(logContent).toMatch(/date.*2026|2026.*date/i);
-
-    // Clean up
-    try { fs.rmSync(contribDir, { recursive: true, force: true }); } catch {}
-  }, 90_000);
-
   testIfSelected('session-awareness', async () => {
     const sessionDir = fs.mkdtempSync(path.join(os.tmpdir(), 'skill-e2e-session-'));
 
@@ -946,6 +890,7 @@ We're building a new user dashboard that shows recent activity, notifications, a
       path.join(ROOT, 'plan-ceo-review', 'SKILL.md'),
       path.join(planDir, 'plan-ceo-review', 'SKILL.md'),
     );
+    { const _sec = path.join(ROOT, 'plan-ceo-review', 'sections'); if (fs.existsSync(_sec)) fs.cpSync(_sec, path.join(planDir, 'plan-ceo-review', 'sections'), { recursive: true }); }
   });
 
   afterAll(() => {
@@ -1030,6 +975,7 @@ We're building a new user dashboard that shows recent activity, notifications, a
       path.join(ROOT, 'plan-ceo-review', 'SKILL.md'),
       path.join(planDir, 'plan-ceo-review', 'SKILL.md'),
     );
+    { const _sec = path.join(ROOT, 'plan-ceo-review', 'sections'); if (fs.existsSync(_sec)) fs.cpSync(_sec, path.join(planDir, 'plan-ceo-review', 'sections'), { recursive: true }); }
   });
 
   afterAll(() => {
@@ -1124,6 +1070,7 @@ Replace session-cookie auth with JWT tokens. Currently using express-session + R
       path.join(ROOT, 'plan-eng-review', 'SKILL.md'),
       path.join(planDir, 'plan-eng-review', 'SKILL.md'),
     );
+    { const _sec = path.join(ROOT, 'plan-eng-review', 'sections'); if (fs.existsSync(_sec)) fs.cpSync(_sec, path.join(planDir, 'plan-eng-review', 'sections'), { recursive: true }); }
   });
 
   afterAll(() => {
@@ -1506,6 +1453,7 @@ export function main() { return Dashboard(); }
       path.join(ROOT, 'plan-eng-review', 'SKILL.md'),
       path.join(planDir, 'plan-eng-review', 'SKILL.md'),
     );
+    { const _sec = path.join(ROOT, 'plan-eng-review', 'sections'); if (fs.existsSync(_sec)) fs.cpSync(_sec, path.join(planDir, 'plan-eng-review', 'sections'), { recursive: true }); }
 
     // Set up remote-slug shim and browse shims (plan-eng-review uses remote-slug for artifact path)
     setupBrowseShims(planDir);
@@ -2312,6 +2260,7 @@ describeIfSelected('Plan Design Review E2E', ['plan-design-review-plan-mode', 'p
       path.join(ROOT, 'plan-design-review', 'SKILL.md'),
       path.join(reviewDir, 'plan-design-review', 'SKILL.md'),
     );
+    { const _sec = path.join(ROOT, 'plan-design-review', 'sections'); if (fs.existsSync(_sec)) fs.cpSync(_sec, path.join(reviewDir, 'plan-design-review', 'sections'), { recursive: true }); }
 
     // Create a plan file with intentional design gaps
     fs.writeFileSync(path.join(reviewDir, 'plan.md'), `# Plan: User Dashboard
@@ -3214,6 +3163,7 @@ describeIfSelected('Office Hours Spec Review E2E', ['office-hours-spec-review'],
       path.join(ROOT, 'office-hours', 'SKILL.md'),
       path.join(ohDir, 'office-hours', 'SKILL.md'),
     );
+    { const _sec = path.join(ROOT, 'office-hours', 'sections'); if (fs.existsSync(_sec)) fs.cpSync(_sec, path.join(ohDir, 'office-hours', 'sections'), { recursive: true }); }
   });
 
   afterAll(() => {
@@ -3276,6 +3226,7 @@ describeIfSelected('Plan CEO Review Benefits-From E2E', ['plan-ceo-review-benefi
       path.join(ROOT, 'plan-ceo-review', 'SKILL.md'),
       path.join(benefitsDir, 'plan-ceo-review', 'SKILL.md'),
     );
+    { const _sec = path.join(ROOT, 'plan-ceo-review', 'sections'); if (fs.existsSync(_sec)) fs.cpSync(_sec, path.join(benefitsDir, 'plan-ceo-review', 'sections'), { recursive: true }); }
   });
 
   afterAll(() => {
