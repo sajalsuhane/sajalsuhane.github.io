@@ -21,6 +21,7 @@ const experience = [
     achievements: [
       'Led the Sybase IQ → Snowflake migration, demising the legacy on-prem stack and eliminating on-prem storage dependencies',
       'Architected the replacement platform: Kubernetes-backed Spring Boot microservices with event-driven ingestion, retaining all existing API contracts',
+      'Founded and lead the team’s AI Guild (Spotify org model), shipping reusable AI skills and cloud-migration playbooks that lifted productivity ~60% and cut L-size ticket delivery from 30 to 18 days',
       'Directed system design, roadmap planning, and cross-organizational stakeholder alignment',
     ],
     tags: ['Kubernetes', 'Snowflake', 'Spring Boot', 'Contour HTTPProxy'],
@@ -66,9 +67,31 @@ const skills = {
   'Distributed Systems': ['Event-Driven Systems', 'High-Throughput Ingestion', 'Queues', 'Microservices'],
   'Cloud & Infra': ['Kubernetes', 'AWS (Glue, S3, DynamoDB)', 'Docker', 'CI/CD'],
   'Big Data & Observability': ['Snowflake', 'Spark', 'Hadoop (HDFS, Hive, MapReduce)', 'Kibana', 'Grafana', 'Prometheus'],
+  'AI & Developer Productivity': ['AI Guild Leadership', 'LLM Tooling', 'Prompt Engineering', 'AI-Assisted Migration', 'Reusable Skills & Playbooks'],
 }
 
 const techStack = ['Java', 'Python', 'Kubernetes', 'AWS', 'Snowflake', 'Spark']
+
+const aiLeadership = {
+  metrics: [
+    { value: '~60%', label: 'Team Productivity Gain', detail: 'From shared AI skills, playbooks & workflows' },
+    { value: '30 → 18 days', label: 'L-Size Ticket Delivery', detail: 'Avg. cycle time for a large t-shirt JIRA, ~40% faster' },
+  ],
+  initiatives: [
+    {
+      title: 'AI Guild (Spotify org model)',
+      body: 'Founded and run a cross-squad AI Guild that turns one-off AI wins into shared, reusable assets the whole team draws from.',
+    },
+    {
+      title: 'Reusable skills & playbooks',
+      body: 'Author reusable AI skills, cloud-migration playbooks, and prompt/workflow standards that compress weeks of engineering effort into days.',
+    },
+    {
+      title: 'Internal AI forum',
+      body: 'Maintain an AI forum for demos, knowledge-sharing, and adoption support — driving AI fluency across the engineering org.',
+    },
+  ],
+}
 
 export default function Home() {
   const [photoFailed, setPhotoFailed] = useState(false)
@@ -103,7 +126,7 @@ export default function Home() {
                 Software Engineer at Goldman Sachs
               </p>
               <p className="text-base sm:text-lg text-slate-400 mb-10 max-w-2xl">
-                Distributed systems &amp; cloud-native architecture
+                Distributed systems, cloud-native architecture &amp; AI-driven engineering
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -211,7 +234,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Experience — the page spine */}
+      {/* 3. AI Leadership — leading AI adoption across the org */}
+      <section id="ai-leadership" className="py-20 sm:py-24 border-t border-slate-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 reveal">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
+              AI Leadership
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+              Scaling AI adoption across the team
+            </h2>
+            <p className="text-slate-400 text-lg max-w-3xl">
+              I lead AI initiatives across my team — founding and running an AI Guild modeled on
+              Spotify&apos;s org structure so AI fluency scales beyond individual engineers into a
+              shared, compounding capability.
+            </p>
+          </div>
+
+          {/* Headline metrics */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 max-w-3xl">
+            {aiLeadership.metrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="rounded-xl border border-slate-800 bg-slate-900/50 p-6"
+              >
+                <div
+                  className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2 tracking-tight"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  {metric.value}
+                </div>
+                <div className="text-sm font-semibold text-slate-200 mb-1">
+                  {metric.label}
+                </div>
+                <div className="text-xs text-slate-400">
+                  {metric.detail}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Initiatives */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {aiLeadership.initiatives.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-slate-800 bg-slate-900/30 p-6"
+              >
+                <h3 className="text-base font-bold text-white mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Experience — the page spine */}
       <section id="experience" className="py-20 sm:py-24 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4 reveal">
@@ -290,7 +372,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Skills */}
+      {/* 5. Skills */}
       <section className="section-alt py-20 sm:py-24 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 reveal">
@@ -319,7 +401,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Contact */}
+      {/* 6. Contact */}
       <section className="py-20 sm:py-24 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 sm:p-12 text-center">

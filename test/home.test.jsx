@@ -46,4 +46,18 @@ describe('Home', () => {
 
     expect(count).toHaveBeenCalledWith({ path: 'resume-download', event: true })
   })
+
+  it('surfaces the AI Leadership section with the Guild and its impact metrics', () => {
+    renderHome()
+
+    expect(
+      screen.getByRole('heading', { name: /scaling ai adoption across the team/i })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /AI Guild \(Spotify org model\)/i })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/internal ai forum/i)).toBeInTheDocument()
+    expect(screen.getByText('~60%')).toBeInTheDocument()
+    expect(screen.getByText('30 → 18 days')).toBeInTheDocument()
+  })
 })
