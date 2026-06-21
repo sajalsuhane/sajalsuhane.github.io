@@ -10,6 +10,7 @@ export const ROUTE_META = {
     title: 'Sajal Suhane — Software Engineer at Goldman Sachs',
     description:
       'Software engineer at Goldman Sachs (Tech Lead, distributed systems & cloud). ' +
+      'Leads AI initiatives & an AI Guild lifting team productivity ~60%. ' +
       'Delivered $1M+ annual cost savings migrating Sybase IQ to Snowflake. Dallas, TX.',
   },
   research: {
